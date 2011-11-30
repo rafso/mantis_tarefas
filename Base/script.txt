@@ -1,0 +1,1219 @@
+USE [db_tarefas]
+GO
+/****** Object:  Table [dbo].[mantis_user_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_user_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[username] [varchar](32) NOT NULL,
+	[realname] [varchar](64) NOT NULL,
+	[email] [varchar](64) NOT NULL,
+	[password] [varchar](32) NOT NULL,
+	[date_created] [datetime] NOT NULL,
+	[last_visit] [datetime] NOT NULL,
+	[enabled] [bit] NOT NULL,
+	[protected] [bit] NOT NULL,
+	[access_level] [smallint] NOT NULL,
+	[login_count] [int] NOT NULL,
+	[lost_password_request_count] [smallint] NOT NULL,
+	[failed_login_count] [smallint] NOT NULL,
+	[cookie_string] [varchar](64) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_user_profile_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_user_profile_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[platform] [varchar](32) NOT NULL,
+	[os] [varchar](32) NOT NULL,
+	[os_build] [varchar](32) NOT NULL,
+	[description] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_user_print_pref_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_user_print_pref_table](
+	[user_id] [int] NOT NULL,
+	[print_pref] [varchar](64) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[user_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_user_pref_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_user_pref_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[project_id] [int] NOT NULL,
+	[default_profile] [int] NOT NULL,
+	[default_project] [int] NOT NULL,
+	[advanced_report] [bit] NOT NULL,
+	[advanced_view] [bit] NOT NULL,
+	[advanced_update] [bit] NOT NULL,
+	[refresh_delay] [int] NOT NULL,
+	[redirect_delay] [bit] NOT NULL,
+	[bugnote_order] [varchar](4) NOT NULL,
+	[email_on_new] [bit] NOT NULL,
+	[email_on_assigned] [bit] NOT NULL,
+	[email_on_feedback] [bit] NOT NULL,
+	[email_on_resolved] [bit] NOT NULL,
+	[email_on_closed] [bit] NOT NULL,
+	[email_on_reopened] [bit] NOT NULL,
+	[email_on_bugnote] [bit] NOT NULL,
+	[email_on_status] [bit] NOT NULL,
+	[email_on_priority] [bit] NOT NULL,
+	[email_on_priority_min_severity] [smallint] NOT NULL,
+	[email_on_status_min_severity] [smallint] NOT NULL,
+	[email_on_bugnote_min_severity] [smallint] NOT NULL,
+	[email_on_reopened_min_severity] [smallint] NOT NULL,
+	[email_on_closed_min_severity] [smallint] NOT NULL,
+	[email_on_resolved_min_severity] [smallint] NOT NULL,
+	[email_on_feedback_min_severity] [smallint] NOT NULL,
+	[email_on_assigned_min_severity] [smallint] NOT NULL,
+	[email_on_new_min_severity] [smallint] NOT NULL,
+	[email_bugnote_limit] [smallint] NOT NULL,
+	[language] [varchar](32) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_tokens_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_tokens_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[owner] [int] NOT NULL,
+	[type] [int] NOT NULL,
+	[timestamp] [datetime] NOT NULL,
+	[expiry] [datetime] NULL,
+	[value] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_task_schedule_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_task_schedule_table](
+	[task_id] [int] NULL,
+	[date_start] [datetime] NULL,
+	[date_end] [datetime] NULL,
+	[date_finished] [datetime] NULL,
+	[hours_prev] [int] NULL,
+	[hours_real] [int] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_tag_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_tag_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[name] [varchar](100) NOT NULL,
+	[description] [text] NOT NULL,
+	[date_created] [datetime] NOT NULL,
+	[date_updated] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC,
+	[name] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_sponsorship_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_sponsorship_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[bug_id] [int] NOT NULL,
+	[user_id] [int] NOT NULL,
+	[amount] [int] NOT NULL,
+	[logo] [varchar](128) NOT NULL,
+	[url] [varchar](128) NOT NULL,
+	[paid] [bit] NOT NULL,
+	[date_submitted] [datetime] NOT NULL,
+	[last_updated] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_project_version_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_project_version_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[project_id] [int] NOT NULL,
+	[version] [varchar](64) NOT NULL,
+	[date_order] [datetime] NOT NULL,
+	[description] [text] NOT NULL,
+	[released] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_project_user_list_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_project_user_list_table](
+	[project_id] [int] NOT NULL,
+	[user_id] [int] NOT NULL,
+	[access_level] [smallint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[project_id] ASC,
+	[user_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_project_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_project_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](128) NOT NULL,
+	[status] [smallint] NOT NULL,
+	[enabled] [bit] NOT NULL,
+	[view_state] [smallint] NOT NULL,
+	[access_min] [smallint] NOT NULL,
+	[file_path] [varchar](250) NOT NULL,
+	[description] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_project_hierarchy_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_project_hierarchy_table](
+	[child_id] [int] NOT NULL,
+	[parent_id] [int] NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_project_file_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_project_file_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[project_id] [int] NOT NULL,
+	[title] [varchar](250) NOT NULL,
+	[description] [varchar](250) NOT NULL,
+	[diskfile] [varchar](250) NOT NULL,
+	[filename] [varchar](250) NOT NULL,
+	[folder] [varchar](250) NOT NULL,
+	[filesize] [int] NOT NULL,
+	[file_type] [varchar](250) NOT NULL,
+	[date_added] [datetime] NOT NULL,
+	[content] [image] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_project_category_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE TABLE [dbo].[mantis_project_category_table](
+	[project_id] [int] NOT NULL,
+	[category] [varchar](64) NOT NULL,
+	[user_id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[project_id] ASC,
+	[category] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_news_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_news_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[project_id] [int] NOT NULL,
+	[poster_id] [int] NOT NULL,
+	[date_posted] [datetime] NOT NULL,
+	[last_modified] [datetime] NOT NULL,
+	[view_state] [smallint] NOT NULL,
+	[announcement] [bit] NOT NULL,
+	[headline] [varchar](64) NOT NULL,
+	[body] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_filters_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_filters_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[project_id] [int] NOT NULL,
+	[is_public] [bit] NULL,
+	[name] [varchar](64) NOT NULL,
+	[filter_string] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_email_table]    Script Date: 05/11/2011 20:51:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_email_table](
+	[email_id] [int] IDENTITY(1,1) NOT NULL,
+	[email] [varchar](64) NOT NULL,
+	[subject] [varchar](250) NOT NULL,
+	[submitted] [datetime] NOT NULL,
+	[metadata] [text] NOT NULL,
+	[body] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[email_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_custom_field_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_custom_field_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](64) NOT NULL,
+	[type] [smallint] NOT NULL,
+	[possible_values] [varchar](255) NOT NULL,
+	[default_value] [varchar](255) NOT NULL,
+	[valid_regexp] [varchar](255) NOT NULL,
+	[access_level_r] [smallint] NOT NULL,
+	[access_level_rw] [smallint] NOT NULL,
+	[length_min] [int] NOT NULL,
+	[length_max] [int] NOT NULL,
+	[advanced] [bit] NOT NULL,
+	[require_report] [bit] NOT NULL,
+	[require_update] [bit] NOT NULL,
+	[display_report] [bit] NOT NULL,
+	[display_update] [bit] NOT NULL,
+	[require_resolved] [bit] NOT NULL,
+	[display_resolved] [bit] NOT NULL,
+	[display_closed] [bit] NOT NULL,
+	[require_closed] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_custom_field_string_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_custom_field_string_table](
+	[field_id] [int] NOT NULL,
+	[bug_id] [int] NOT NULL,
+	[value] [varchar](255) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[field_id] ASC,
+	[bug_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_custom_field_project_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_custom_field_project_table](
+	[field_id] [int] NOT NULL,
+	[project_id] [int] NOT NULL,
+	[sequence] [smallint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[field_id] ASC,
+	[project_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_config_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_config_table](
+	[config_id] [varchar](64) NOT NULL,
+	[project_id] [int] NOT NULL,
+	[user_id] [int] NOT NULL,
+	[access_reqd] [int] NULL,
+	[type] [int] NULL,
+	[value] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[config_id] ASC,
+	[project_id] ASC,
+	[user_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_bugnote_text_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_bugnote_text_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[note] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_bugnote_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_bugnote_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[bug_id] [int] NOT NULL,
+	[reporter_id] [int] NOT NULL,
+	[bugnote_text_id] [int] NOT NULL,
+	[view_state] [smallint] NOT NULL,
+	[date_submitted] [datetime] NOT NULL,
+	[last_modified] [datetime] NOT NULL,
+	[note_type] [int] NULL,
+	[note_attr] [varchar](250) NULL,
+	[time_tracking] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_bug_text_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_bug_text_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[description] [text] NOT NULL,
+	[steps_to_reproduce] [text] NOT NULL,
+	[additional_information] [text] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_bug_tag_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_bug_tag_table](
+	[bug_id] [int] NOT NULL,
+	[tag_id] [int] NOT NULL,
+	[user_id] [int] NOT NULL,
+	[date_attached] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[bug_id] ASC,
+	[tag_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_bug_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_bug_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[project_id] [int] NOT NULL,
+	[reporter_id] [int] NOT NULL,
+	[type_task] [int] NOT NULL,
+	[handler_id] [int] NOT NULL,
+	[duplicate_id] [int] NOT NULL,
+	[priority] [smallint] NOT NULL,
+	[status] [smallint] NOT NULL,
+	[resolution] [smallint] NOT NULL,
+	[date_submitted] [datetime] NOT NULL,
+	[last_updated] [datetime] NOT NULL,
+	[eta] [smallint] NOT NULL,
+	[bug_text_id] [int] NOT NULL,
+	[view_state] [smallint] NOT NULL,
+	[summary] [varchar](128) NOT NULL,
+	[relation_cases] [varchar](100) NULL,
+	[date_start] [datetime] NULL,
+	[date_end] [datetime] NULL,
+	[date_finished] [datetime] NULL,
+	[hours_prev] [int] NULL,
+	[hours_real] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_bug_relationship_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_bug_relationship_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[source_bug_id] [int] NOT NULL,
+	[destination_bug_id] [int] NOT NULL,
+	[relationship_type] [smallint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_bug_relationship_system_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_bug_relationship_system_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[type] [nvarchar](50) NULL,
+	[id_source] [nchar](10) NULL,
+	[id_dest] [nchar](128) NULL,
+	[status] [nchar](10) NULL,
+	[project] [nvarchar](50) NULL,
+	[summary] [nvarchar](128) NULL,
+	[sistema_dest] [nchar](128) NULL,
+ CONSTRAINT [PK_mantis_bug_relationship_system_table_1] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_bug_monitor_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mantis_bug_monitor_table](
+	[user_id] [int] NOT NULL,
+	[bug_id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[user_id] ASC,
+	[bug_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mantis_bug_history_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_bug_history_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[user_id] [int] NOT NULL,
+	[bug_id] [int] NOT NULL,
+	[date_modified] [datetime] NOT NULL,
+	[field_name] [varchar](64) NOT NULL,
+	[old_value] [varchar](255) NOT NULL,
+	[new_value] [varchar](255) NOT NULL,
+	[type] [smallint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mantis_bug_file_table]    Script Date: 05/11/2011 20:51:44 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[mantis_bug_file_table](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[bug_id] [int] NOT NULL,
+	[title] [varchar](250) NOT NULL,
+	[description] [varchar](250) NOT NULL,
+	[diskfile] [varchar](250) NOT NULL,
+	[filename] [varchar](250) NOT NULL,
+	[folder] [varchar](250) NOT NULL,
+	[filesize] [int] NOT NULL,
+	[file_type] [varchar](250) NOT NULL,
+	[date_added] [datetime] NOT NULL,
+	[content] [image] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Default [DF__mantis_bu__bug_i__08EA5793]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__title__09DE7BCC]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('') FOR [title]
+GO
+/****** Object:  Default [DF__mantis_bu__descr__0AD2A005]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('') FOR [description]
+GO
+/****** Object:  Default [DF__mantis_bu__diskf__0BC6C43E]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('') FOR [diskfile]
+GO
+/****** Object:  Default [DF__mantis_bu__filen__0CBAE877]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('') FOR [filename]
+GO
+/****** Object:  Default [DF__mantis_bu__folde__0DAF0CB0]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('') FOR [folder]
+GO
+/****** Object:  Default [DF__mantis_bu__files__0EA330E9]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ((0)) FOR [filesize]
+GO
+/****** Object:  Default [DF__mantis_bu__file___0F975522]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('') FOR [file_type]
+GO
+/****** Object:  Default [DF__mantis_bu__date___108B795B]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_file_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_added]
+GO
+/****** Object:  Default [DF__mantis_bu__user___15502E78]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_bu__bug_i__164452B1]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__date___173876EA]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_modified]
+GO
+/****** Object:  Default [DF__mantis_bu__field__182C9B23]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ('') FOR [field_name]
+GO
+/****** Object:  Default [DF__mantis_bu__old_v__1920BF5C]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ('') FOR [old_value]
+GO
+/****** Object:  Default [DF__mantis_bu__new_v__1A14E395]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ('') FOR [new_value]
+GO
+/****** Object:  Default [DF__mantis_bug__type__1B0907CE]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_history_table] ADD  DEFAULT ((0)) FOR [type]
+GO
+/****** Object:  Default [DF__mantis_bu__user___1FCDBCEB]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_monitor_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_bu__bug_i__20C1E124]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_monitor_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__sourc__25869641]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_relationship_table] ADD  DEFAULT ((0)) FOR [source_bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__desti__267ABA7A]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_relationship_table] ADD  DEFAULT ((0)) FOR [destination_bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__relat__276EDEB3]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_relationship_table] ADD  DEFAULT ((0)) FOR [relationship_type]
+GO
+/****** Object:  Default [DF__mantis_bu__proje__74444068]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_bu__repor__753864A1]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((0)) FOR [reporter_id]
+GO
+/****** Object:  Default [DF__mantis_bu__handl__762C88DA]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((0)) FOR [handler_id]
+GO
+/****** Object:  Default [DF__mantis_bu__dupli__7720AD13]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((0)) FOR [duplicate_id]
+GO
+/****** Object:  Default [DF__mantis_bu__prior__7814D14C]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((30)) FOR [priority]
+GO
+/****** Object:  Default [DF__mantis_bu__statu__7908F585]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((10)) FOR [status]
+GO
+/****** Object:  Default [DF__mantis_bu__resol__79FD19BE]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((10)) FOR [resolution]
+GO
+/****** Object:  Default [DF__mantis_bu__date___7AF13DF7]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_submitted]
+GO
+/****** Object:  Default [DF__mantis_bu__last___7BE56230]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [last_updated]
+GO
+/****** Object:  Default [DF__mantis_bug___eta__7CD98669]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((10)) FOR [eta]
+GO
+/****** Object:  Default [DF__mantis_bu__bug_t__7DCDAAA2]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((0)) FOR [bug_text_id]
+GO
+/****** Object:  Default [DF__mantis_bu__view___7EC1CEDB]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ((10)) FOR [view_state]
+GO
+/****** Object:  Default [DF__mantis_bu__summa__7FB5F314]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_table] ADD  DEFAULT ('') FOR [summary]
+GO
+/****** Object:  Default [DF__mantis_bu__bug_i__19AACF41]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_tag_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__tag_i__1A9EF37A]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_tag_table] ADD  DEFAULT ((0)) FOR [tag_id]
+GO
+/****** Object:  Default [DF__mantis_bu__user___1B9317B3]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_tag_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_bu__date___1C873BEC]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bug_tag_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_attached]
+GO
+/****** Object:  Default [DF__mantis_bu__bug_i__4CA06362]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_bu__repor__4D94879B]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ((0)) FOR [reporter_id]
+GO
+/****** Object:  Default [DF__mantis_bu__bugno__4E88ABD4]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ((0)) FOR [bugnote_text_id]
+GO
+/****** Object:  Default [DF__mantis_bu__view___4F7CD00D]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ((10)) FOR [view_state]
+GO
+/****** Object:  Default [DF__mantis_bu__date___5070F446]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_submitted]
+GO
+/****** Object:  Default [DF__mantis_bu__last___5165187F]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [last_modified]
+GO
+/****** Object:  Default [DF__mantis_bu__note___52593CB8]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ((0)) FOR [note_type]
+GO
+/****** Object:  Default [DF__mantis_bu__note___534D60F1]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ('') FOR [note_attr]
+GO
+/****** Object:  Default [DF__mantis_bu__time___0D44F85C]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_bugnote_table] ADD  DEFAULT ((0)) FOR [time_tracking]
+GO
+/****** Object:  Default [DF__mantis_co__proje__014935CB]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_config_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_co__user___023D5A04]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_config_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_co__acces__03317E3D]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_config_table] ADD  DEFAULT ((0)) FOR [access_reqd]
+GO
+/****** Object:  Default [DF__mantis_con__type__0425A276]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_config_table] ADD  DEFAULT ((90)) FOR [type]
+GO
+/****** Object:  Default [DF__mantis_cu__field__5BE2A6F2]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_project_table] ADD  DEFAULT ((0)) FOR [field_id]
+GO
+/****** Object:  Default [DF__mantis_cu__proje__5CD6CB2B]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_project_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_cu__seque__5DCAEF64]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_project_table] ADD  DEFAULT ((0)) FOR [sequence]
+GO
+/****** Object:  Default [DF__mantis_cu__field__628FA481]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_string_table] ADD  DEFAULT ((0)) FOR [field_id]
+GO
+/****** Object:  Default [DF__mantis_cu__bug_i__6383C8BA]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_string_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_cu__value__6477ECF3]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_string_table] ADD  DEFAULT ('') FOR [value]
+GO
+/****** Object:  Default [DF__mantis_cus__name__693CA210]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ('') FOR [name]
+GO
+/****** Object:  Default [DF__mantis_cus__type__6A30C649]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [type]
+GO
+/****** Object:  Default [DF__mantis_cu__possi__6B24EA82]    Script Date: 05/11/2011 20:51:44 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ('') FOR [possible_values]
+GO
+/****** Object:  Default [DF__mantis_cu__defau__6C190EBB]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ('') FOR [default_value]
+GO
+/****** Object:  Default [DF__mantis_cu__valid__6D0D32F4]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ('') FOR [valid_regexp]
+GO
+/****** Object:  Default [DF__mantis_cu__acces__6E01572D]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [access_level_r]
+GO
+/****** Object:  Default [DF__mantis_cu__acces__6EF57B66]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [access_level_rw]
+GO
+/****** Object:  Default [DF__mantis_cu__lengt__6FE99F9F]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [length_min]
+GO
+/****** Object:  Default [DF__mantis_cu__lengt__70DDC3D8]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [length_max]
+GO
+/****** Object:  Default [DF__mantis_cu__advan__71D1E811]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [advanced]
+GO
+/****** Object:  Default [DF__mantis_cu__requi__72C60C4A]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [require_report]
+GO
+/****** Object:  Default [DF__mantis_cu__requi__73BA3083]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [require_update]
+GO
+/****** Object:  Default [DF__mantis_cu__displ__74AE54BC]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((1)) FOR [display_report]
+GO
+/****** Object:  Default [DF__mantis_cu__displ__75A278F5]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((1)) FOR [display_update]
+GO
+/****** Object:  Default [DF__mantis_cu__requi__76969D2E]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [require_resolved]
+GO
+/****** Object:  Default [DF__mantis_cu__displ__778AC167]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [display_resolved]
+GO
+/****** Object:  Default [DF__mantis_cu__displ__787EE5A0]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [display_closed]
+GO
+/****** Object:  Default [DF__mantis_cu__requi__797309D9]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_custom_field_table] ADD  DEFAULT ((0)) FOR [require_closed]
+GO
+/****** Object:  Default [DF__mantis_em__email__09746778]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_email_table] ADD  DEFAULT ('') FOR [email]
+GO
+/****** Object:  Default [DF__mantis_em__subje__0A688BB1]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_email_table] ADD  DEFAULT ('') FOR [subject]
+GO
+/****** Object:  Default [DF__mantis_em__submi__0B5CAFEA]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_email_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [submitted]
+GO
+/****** Object:  Default [DF__mantis_fi__user___7E37BEF6]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_filters_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_fi__proje__7F2BE32F]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_filters_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_fi__is_pu__00200768]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_filters_table] ADD  DEFAULT (NULL) FOR [is_public]
+GO
+/****** Object:  Default [DF__mantis_fil__name__01142BA1]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_filters_table] ADD  DEFAULT ('') FOR [name]
+GO
+/****** Object:  Default [DF__mantis_ne__proje__05D8E0BE]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_ne__poste__06CD04F7]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ((0)) FOR [poster_id]
+GO
+/****** Object:  Default [DF__mantis_ne__date___07C12930]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_posted]
+GO
+/****** Object:  Default [DF__mantis_ne__last___08B54D69]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [last_modified]
+GO
+/****** Object:  Default [DF__mantis_ne__view___09A971A2]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ((10)) FOR [view_state]
+GO
+/****** Object:  Default [DF__mantis_ne__annou__0A9D95DB]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ((0)) FOR [announcement]
+GO
+/****** Object:  Default [DF__mantis_ne__headl__0B91BA14]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_news_table] ADD  DEFAULT ('') FOR [headline]
+GO
+/****** Object:  Default [DF__mantis_pr__proje__047AA831]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_category_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_pr__categ__056ECC6A]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_category_table] ADD  DEFAULT ('') FOR [category]
+GO
+/****** Object:  Default [DF__mantis_pr__user___0662F0A3]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_category_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_pr__proje__17036CC0]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_pr__title__17F790F9]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('') FOR [title]
+GO
+/****** Object:  Default [DF__mantis_pr__descr__18EBB532]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('') FOR [description]
+GO
+/****** Object:  Default [DF__mantis_pr__diskf__19DFD96B]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('') FOR [diskfile]
+GO
+/****** Object:  Default [DF__mantis_pr__filen__1AD3FDA4]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('') FOR [filename]
+GO
+/****** Object:  Default [DF__mantis_pr__folde__1BC821DD]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('') FOR [folder]
+GO
+/****** Object:  Default [DF__mantis_pr__files__1CBC4616]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ((0)) FOR [filesize]
+GO
+/****** Object:  Default [DF__mantis_pr__file___1DB06A4F]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('') FOR [file_type]
+GO
+/****** Object:  Default [DF__mantis_pr__date___1EA48E88]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_file_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_added]
+GO
+/****** Object:  Default [DF__mantis_pro__name__245D67DE]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_table] ADD  DEFAULT ('') FOR [name]
+GO
+/****** Object:  Default [DF__mantis_pr__statu__25518C17]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_table] ADD  DEFAULT ((10)) FOR [status]
+GO
+/****** Object:  Default [DF__mantis_pr__enabl__2645B050]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_table] ADD  DEFAULT ((1)) FOR [enabled]
+GO
+/****** Object:  Default [DF__mantis_pr__view___2739D489]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_table] ADD  DEFAULT ((10)) FOR [view_state]
+GO
+/****** Object:  Default [DF__mantis_pr__acces__282DF8C2]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_table] ADD  DEFAULT ((10)) FOR [access_min]
+GO
+/****** Object:  Default [DF__mantis_pr__file___29221CFB]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_table] ADD  DEFAULT ('') FOR [file_path]
+GO
+/****** Object:  Default [DF__mantis_pr__proje__2DE6D218]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_user_list_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_pr__user___2EDAF651]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_user_list_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_pr__acces__2FCF1A8A]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_user_list_table] ADD  DEFAULT ((10)) FOR [access_level]
+GO
+/****** Object:  Default [DF__mantis_pr__proje__3493CFA7]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_version_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_pr__versi__3587F3E0]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_version_table] ADD  DEFAULT ('') FOR [version]
+GO
+/****** Object:  Default [DF__mantis_pr__date___367C1819]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_version_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_order]
+GO
+/****** Object:  Default [DF__mantis_pr__relea__37703C52]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_project_version_table] ADD  DEFAULT ((1)) FOR [released]
+GO
+/****** Object:  Default [DF__mantis_sp__bug_i__3C34F16F]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ((0)) FOR [bug_id]
+GO
+/****** Object:  Default [DF__mantis_sp__user___3D2915A8]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_sp__amoun__3E1D39E1]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ((0)) FOR [amount]
+GO
+/****** Object:  Default [DF__mantis_spo__logo__3F115E1A]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ('') FOR [logo]
+GO
+/****** Object:  Default [DF__mantis_spon__url__40058253]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ('') FOR [url]
+GO
+/****** Object:  Default [DF__mantis_spo__paid__40F9A68C]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ((0)) FOR [paid]
+GO
+/****** Object:  Default [DF__mantis_sp__date___41EDCAC5]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_submitted]
+GO
+/****** Object:  Default [DF__mantis_sp__last___42E1EEFE]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_sponsorship_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [last_updated]
+GO
+/****** Object:  Default [DF__mantis_ta__user___1209AD79]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_tag_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_tag__name__12FDD1B2]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_tag_table] ADD  DEFAULT ('') FOR [name]
+GO
+/****** Object:  Default [DF__mantis_ta__date___13F1F5EB]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_tag_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_created]
+GO
+/****** Object:  Default [DF__mantis_ta__date___14E61A24]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_tag_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_updated]
+GO
+/****** Object:  Default [DF__mantis_us__user___4B7734FF]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_us__proje__4C6B5938]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [project_id]
+GO
+/****** Object:  Default [DF__mantis_us__defau__4D5F7D71]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [default_profile]
+GO
+/****** Object:  Default [DF__mantis_us__defau__4E53A1AA]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [default_project]
+GO
+/****** Object:  Default [DF__mantis_us__advan__4F47C5E3]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [advanced_report]
+GO
+/****** Object:  Default [DF__mantis_us__advan__503BEA1C]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [advanced_view]
+GO
+/****** Object:  Default [DF__mantis_us__advan__51300E55]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [advanced_update]
+GO
+/****** Object:  Default [DF__mantis_us__refre__5224328E]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [refresh_delay]
+GO
+/****** Object:  Default [DF__mantis_us__redir__531856C7]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [redirect_delay]
+GO
+/****** Object:  Default [DF__mantis_us__bugno__540C7B00]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ('ASC') FOR [bugnote_order]
+GO
+/****** Object:  Default [DF__mantis_us__email__55009F39]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_new]
+GO
+/****** Object:  Default [DF__mantis_us__email__55F4C372]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_assigned]
+GO
+/****** Object:  Default [DF__mantis_us__email__56E8E7AB]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_feedback]
+GO
+/****** Object:  Default [DF__mantis_us__email__57DD0BE4]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_resolved]
+GO
+/****** Object:  Default [DF__mantis_us__email__58D1301D]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_closed]
+GO
+/****** Object:  Default [DF__mantis_us__email__59C55456]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_reopened]
+GO
+/****** Object:  Default [DF__mantis_us__email__5AB9788F]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_bugnote]
+GO
+/****** Object:  Default [DF__mantis_us__email__5BAD9CC8]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_status]
+GO
+/****** Object:  Default [DF__mantis_us__email__5CA1C101]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_on_priority]
+GO
+/****** Object:  Default [DF__mantis_us__email__5D95E53A]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_priority_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__5E8A0973]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_status_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__5F7E2DAC]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_bugnote_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__607251E5]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_reopened_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__6166761E]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_closed_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__625A9A57]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_resolved_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__634EBE90]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_feedback_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__6442E2C9]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_assigned_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__65370702]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((10)) FOR [email_on_new_min_severity]
+GO
+/****** Object:  Default [DF__mantis_us__email__662B2B3B]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ((0)) FOR [email_bugnote_limit]
+GO
+/****** Object:  Default [DF__mantis_us__langu__671F4F74]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_pref_table] ADD  DEFAULT ('english') FOR [language]
+GO
+/****** Object:  Default [DF__mantis_us__user___6BE40491]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_print_pref_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_us__print__6CD828CA]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_print_pref_table] ADD  DEFAULT ('') FOR [print_pref]
+GO
+/****** Object:  Default [DF__mantis_us__user___719CDDE7]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_profile_table] ADD  DEFAULT ((0)) FOR [user_id]
+GO
+/****** Object:  Default [DF__mantis_us__platf__72910220]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_profile_table] ADD  DEFAULT ('') FOR [platform]
+GO
+/****** Object:  Default [DF__mantis_user___os__73852659]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_profile_table] ADD  DEFAULT ('') FOR [os]
+GO
+/****** Object:  Default [DF__mantis_us__os_bu__74794A92]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_profile_table] ADD  DEFAULT ('') FOR [os_build]
+GO
+/****** Object:  Default [DF__mantis_us__usern__793DFFAF]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('') FOR [username]
+GO
+/****** Object:  Default [DF__mantis_us__realn__7A3223E8]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('') FOR [realname]
+GO
+/****** Object:  Default [DF__mantis_us__email__7B264821]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('') FOR [email]
+GO
+/****** Object:  Default [DF__mantis_us__passw__7C1A6C5A]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('') FOR [password]
+GO
+/****** Object:  Default [DF__mantis_us__date___7D0E9093]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [date_created]
+GO
+/****** Object:  Default [DF__mantis_us__last___7E02B4CC]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('1970-01-01 00:00:01') FOR [last_visit]
+GO
+/****** Object:  Default [DF__mantis_us__enabl__7EF6D905]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ((1)) FOR [enabled]
+GO
+/****** Object:  Default [DF__mantis_us__prote__7FEAFD3E]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ((0)) FOR [protected]
+GO
+/****** Object:  Default [DF__mantis_us__acces__00DF2177]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ((10)) FOR [access_level]
+GO
+/****** Object:  Default [DF__mantis_us__login__01D345B0]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ((0)) FOR [login_count]
+GO
+/****** Object:  Default [DF__mantis_us__lost___02C769E9]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ((0)) FOR [lost_password_request_count]
+GO
+/****** Object:  Default [DF__mantis_us__faile__03BB8E22]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ((0)) FOR [failed_login_count]
+GO
+/****** Object:  Default [DF__mantis_us__cooki__04AFB25B]    Script Date: 05/11/2011 20:51:45 ******/
+ALTER TABLE [dbo].[mantis_user_table] ADD  DEFAULT ('') FOR [cookie_string]
+GO

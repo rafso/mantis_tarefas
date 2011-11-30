@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{1863889A-00DF-4350-BA39-669CA949CB81}") = "tarefas", "tarefas.phpproj", "{D3A0647A-FEA8-4389-8679-00F32F07F781}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://corps031:8080/
+		SccProjectUniqueName0 = tarefas.phpproj
+		SccProjectName0 = tarefas
+		SccAuxPath0 = http://corps031:8080
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Local|PHP 5 = Local|PHP 5
+		Production|PHP 5 = Production|PHP 5
+		Staging|PHP 5 = Staging|PHP 5
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3A0647A-FEA8-4389-8679-00F32F07F781}.Local|PHP 5.ActiveCfg = Local|PHP 5
+		{D3A0647A-FEA8-4389-8679-00F32F07F781}.Local|PHP 5.Deploy.0 = Local|PHP 5
+		{D3A0647A-FEA8-4389-8679-00F32F07F781}.Production|PHP 5.ActiveCfg = Production|PHP 5
+		{D3A0647A-FEA8-4389-8679-00F32F07F781}.Production|PHP 5.Deploy.0 = Production|PHP 5
+		{D3A0647A-FEA8-4389-8679-00F32F07F781}.Staging|PHP 5.ActiveCfg = Staging|PHP 5
+		{D3A0647A-FEA8-4389-8679-00F32F07F781}.Staging|PHP 5.Deploy.0 = Staging|PHP 5
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

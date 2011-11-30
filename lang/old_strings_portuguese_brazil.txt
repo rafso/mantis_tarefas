@@ -1,0 +1,1471 @@
+<?php
+# Mantis - a php based bugtracking system
+# Copyright (C) 2000 - 2002  Kenzaburo Ito - kenito@300baud.org
+# Copyright (C) 2002 - 2007  Mantis Team   - mantisbt-dev@lists.sourceforge.net
+
+# Mantis is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# Mantis is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Mantis.  If not, see <http://www.gnu.org/licenses/>.
+	#
+	# Brazilian Portuguese: Felipe Tonioli, tonioli@easyline.com.br
+	# Brazilian Portuguese: Fernando Machado, fm-nospam@fmachado.com
+	# Brazilian Portuguese: Juliano F. Ravasi, dev at juliano info
+	# Brazilian Portuguese: André Sencioles, andre spiritlinux com br
+	# Brazilian Portuguese: Jeferson Oliveira, jefersonfoliveira@gmail.com
+	#
+	###########################################################################
+	# Brazilian Portuguese strings for Mantis
+	# Based on strings_english.txt rev. 1.316 $
+	# -------------------------------------------------
+	# $Revision: 1.106.2.1 $
+	# $Author: giallu $
+	# $Date: 2007-10-13 22:36:30 $
+	#
+	# $Id: strings_portuguese_brazil.txt,v 1.106.2.1 2007-10-13 22:36:30 giallu Exp $
+	###########################################################################
+
+?>
+<?php
+# Charset
+$s_charset = 'utf-8';
+
+# Group commands menuitems
+$s_actiongroup_menu_move = 'Mover';
+$s_actiongroup_menu_copy = 'Copiar';
+$s_actiongroup_menu_assign = 'Atribuir';
+$s_actiongroup_menu_close = 'Fechar';
+$s_actiongroup_menu_delete = 'Apagar';
+$s_actiongroup_menu_resolve = 'Resolver';
+$s_actiongroup_menu_update_priority = 'Atualizar Prioridade';
+$s_actiongroup_menu_update_status = 'Atualizar Status';
+$s_actiongroup_menu_update_view_status = 'Atualizar Visibilidade';
+$s_actiongroup_menu_update_category = 'Atualizar Categoria';
+$s_actiongroup_menu_set_sticky = 'Marcar/Desmarcar Pegajosa';
+$s_actiongroup_menu_update_field = 'Atualizar %s';
+$s_actiongroup_menu_update_target_version = 'Atualizar Previsto para Versão';
+$s_actiongroup_menu_update_fixed_in_version = 'Atualizar Disponível na Versão';
+$s_actiongroup_menu_add_note = 'Adicionar Anotação';
+$s_actiongroup_menu_attach_tags = 'Aplicar marcadores';
+$s_actiongroup_bugs = 'Demandas Selecionadas';
+
+# new strings:
+$s_all_projects = 'Todos os Projetos';
+$s_move_bugs = 'Mover Demandas';
+$s_operation_successful = 'Operação realizada com sucesso.';
+$s_date_order = 'Ordem por Data';
+$s_print_all_bug_page_link = 'Imprimir Relatórios';
+$s_csv_export = 'Exportar CSV';
+$s_login_anonymously = 'Login anônimo';
+$s_anonymous = 'Anônimo';
+$s_jump_to_bugnotes = 'Ir para as Anotações';
+$s_public_project_msg = 'Este projeto é PÚBLICO.  Todos os usuários tem acesso.';
+$s_private_project_msg = 'Este projeto é PRIVADO.  Somente administradores e usuários adicionados manualmente tem acesso.';
+$s_access_level_project = 'Nível de Acesso ao Projeto';
+$s_view_submitted_bug_link = 'Visualizar Demanda Enviada';
+$s_assigned_projects = 'Projetos Atribuídos';
+$s_unassigned_projects = 'Projetos Não Atribuídos';
+$s_print = "Imprimir";
+$s_jump = "Ir para";
+$s_copy_users = 'Copiar Usuários';
+$s_copy_categories_from = 'Copiar Categorias De';
+$s_copy_categories_to = 'Copiar Categorias Para';
+$s_copy_versions_from = 'Copiar Versões De';
+$s_copy_versions_to = 'Copiar Versões Para';
+$s_copy_users_from = 'Copiar Usuários De';
+$s_copy_users_to = 'Copiar Usuários Para';
+$s_bug_history = 'Histórico da Demanda';
+$s_field = 'Campo';
+$s_old_value = 'Valor Antigo';
+$s_new_value = 'Novo Valor';
+$s_date_modified = 'Data da Mudança';
+$s_bugnote = 'Anotação';
+$s_change = 'Alteração';
+$s_bugnote_view_state = 'Visibilidade da Anotação';
+$s_bug_monitor = 'Monitorado por';
+$s_bug_end_monitor = 'Parou de monitorar';
+$s_announcement = 'Anúncio';
+$s_stays_on_top = 'Manter no Topo';
+$s_delete_bugnote_button = 'Apagar Anotação';
+$s_delete_bugnote_sure_msg = 'Você tem certeza que você quer apagar essa anotação?';
+$s_bug_relationships = 'Relações';
+$s_empty_password_sure_msg = 'Este usuário possui uma senha em branco.  Você tem certeza que é isso que você deseja?';
+$s_empty_password_button = 'Usar Senha em Branco';
+$s_reauthenticate_title = 'Authenticação';
+$s_reauthenticate_message = 'Você está visitando uma página segura, e sua sessão expirou. Por favor autentique-se novamente.';
+
+$s_duplicate_of = 'é duplicado de';
+$s_has_duplicate = 'possui duplicado';
+$s_related_to = 'está relacionado a';
+$s_dependant_on = 'é pai de';
+$s_blocks = 'é filho de';
+
+$s_new_bug = 'Nova Demanda';
+$s_bugnote_added = 'Anotação Adicionada';
+$s_bugnote_edited = 'Anotação Alterada';
+$s_bugnote_deleted = 'Anotação Apagada';
+$s_summary_updated = 'Resumo Atualizado';
+$s_description_updated = 'Descrição Atualizada';
+$s_additional_information_updated = 'Informação Adicional Atualizada';
+$s_steps_to_reproduce_updated = 'Passos para Reprodução Atualizados';
+$s_file_added = 'Arquivo Adicionado';
+$s_file_deleted = 'Arquivo Apagado';
+$s_bug_deleted = 'Demanda Apagada';
+
+$s_make_private = 'Tornar Privado';
+$s_make_public = 'Tornar Público';
+
+$s_create_new_project_link = 'Criar Novo Projeto';
+
+$s_login_link = 'Login';
+$s_select_option = '(selecione)';
+
+# bug_actiongroup_page.php : mass treatment
+$s_bug_actiongroup_access = 'Você não possui as permissões apropriadas para realizar esta ação.';
+$s_bug_actiongroup_status = 'Este Demanda não pode ser alterado para o status solicitado';
+$s_bug_actiongroup_category = 'Este Demanda não pode ser alterado para a categoria solicitada';
+$s_close_bugs_conf_msg = 'Você tem certeza que deseja fechar esteas Demandas ?';
+$s_delete_bugs_conf_msg = 'Você tem certeza que deseja apagar esteas Demandas ?';
+$s_move_bugs_conf_msg = 'Mover Demandas para';
+$s_copy_bugs_conf_msg = 'Copiar Demandas para';
+$s_assign_bugs_conf_msg = 'Atribuir Demandas a';
+$s_resolve_bugs_conf_msg = 'Escolher resolução das Demandas';
+$s_priority_bugs_conf_msg = 'Escolher prioridade das Demandas';
+$s_status_bugs_conf_msg = 'Escolher status das Demandas';
+$s_view_status_bugs_conf_msg = 'Escolher visibilidade das Demandas';
+$s_category_bugs_conf_msg = 'Escolher a categoria da Demanda';
+$s_set_sticky_bugs_conf_msg = 'Você tem certeza que deseja marcar/desmarcar estas Demandas como "pegajosas"?';
+$s_fixed_in_version_bugs_conf_msg = 'Atualizar Disponível na Versão';
+$s_target_version_bugs_conf_msg = 'Atualizar Previsto para a Versão';
+$s_close_group_bugs_button = 'Fechar Demandas' ;
+$s_delete_group_bugs_button = 'Apagar Demandas' ;
+$s_move_group_bugs_button = 'Mover Demandas' ;
+$s_copy_group_bugs_button = 'Copiar Demandas' ;
+$s_assign_group_bugs_button = 'Atribuir Demandas' ;
+$s_resolve_group_bugs_button = 'Resolver Demandas' ;
+$s_priority_group_bugs_button = 'Atualizar Prioridade' ;
+#inserido para atender a mensagem do status criado:
+$s_recusado_bug_title = 'Recusar demanda';
+$s_recusado_bug_button = 'Recusar demanda';
+#inserido para atender a mensagem do bot�o do status criado:
+$s_reenviado_bug_title = 'Reenviar demanda';
+$s_reenviado_bug_button = 'Reenviar demanda';
+
+$s_status_group_bugs_button = 'Atualizar Status' ;
+$s_category_group_bugs_button = 'Atualizar Categoria';
+$s_view_status_group_bugs_button = 'Atualizar Visibilidade';
+$s_set_sticky_group_bugs_button = 'Marcar/Desmarcar Pegajosas';
+$s_fixed_in_version_group_bugs_button = 'Atualizar Disponível na Versão';
+$s_target_version_group_bugs_button = 'Atualizar Previsto para a Versão';
+
+# improved JPgraphs strings
+$s_graph_imp_status_title = 'Gráfico de síntese por status' ;
+$s_graph_imp_priority_title = 'Gráfico de síntese por prioridade' ;
+$s_graph_imp_severity_title = 'Gráfico de síntese por gravidade';
+$s_graph_imp_category_title = 'Gráfico de síntese por categoria';
+$s_graph_imp_resolution_title = 'Gráfico de síntese por resolução';
+$s_by_status_pct = 'porcentagem por status';
+$s_by_priority_pct = 'porcentagem por prioridade';
+$s_by_severity_pct = 'porcentagem por gravidade';
+$s_by_category_pct = 'porcentagem por categoria';
+$s_by_resolution_pct = 'porcentagem por resolução';
+$s_by_severity_mix = 'por gravidade e status';
+$s_by_priority_mix = 'por prioridade e status';
+$s_by_resolution_mix = 'por resolução e status';
+$s_synthesis_link = 'Síntese';
+$s_status_link = 'Por status';
+$s_priority_link = 'Por prioridade';
+$s_severity_link = 'Por gravidade';
+$s_category_link = 'Por categoria';
+$s_resolution_link = 'Por resolução';
+$s_legend_still_open = 'Ainda aberto';
+$s_legend_resolved = 'Resolvido';
+$s_legend_testes = 'Em testes';
+$s_legend_assigned = 'Atribuído';
+$s_legend_total = 'Total';
+$s_legend_opened = 'Aberto';
+$s_legend_closed = 'Fechado';
+$s_legend_reported = 'Reportado';
+$s_cumulative = 'Cumulativo';
+$s_not_enough_data = 'Não há dados suficientes para criar o gráfico';
+
+# print_all_bug_page.php : display selected bugs
+$s_hide_button = 'Mostrar apenas os selecionados';
+
+# print_all_bug_options.php : printing preferences
+$s_printing_preferences_title = 'Escolher os campos para impressão';
+$s_printing_options_link = 'Opções de Impressão';
+
+# word and excel export
+$s_bugnote_title = 'Identificador da anotação' ;
+$s_bugnote_date = 'Data da anotação';
+$s_bugnote_description = 'Descrição da anotação';
+
+$s_error_no_proceed = 'Por favor, utilize o botão "Voltar" de seu navegador web para voltar à pagina anterior.  Lá você pode corrigir quaisquer problemas identificados neste erro ou escolher uma outra ação.  Você também pode clicar em uma opção da barra de menus para ir diretamente para outra seção.';
+
+# ERROR strings
+$MANTIS_ERROR[ERROR_GENERIC] = 'Um erro ocorreu durante esta ação.  Você pode querer relatar este erro ao seu administrador local.';
+$MANTIS_ERROR[ERROR_SQL] = 'Erro SQL detectado.  Por favor, relate para ';
+$MANTIS_ERROR[ERROR_REPORT] = 'Houve um erro em seu relatório.';
+$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Arquivo não especificado';
+$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'O tipo de arquivo não é permitido';
+$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'O diretório não existe. Por favor, verifique as configurações do projeto.';
+$MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Este é um arquivo duplicado.  Por favor, apague o arquivo antes.';
+$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Um projeto com este nome já existe.';
+$MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Um campo necessário \'%s\' estava vazio.  Por favor, verifique novamente suas entradas.';
+$MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Esta conta está protegida.  Você não tem permissão para acessá-la até que a proteção da conta seja retirada.';
+$MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Acesso Negado.';
+$MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'O carregamento do arquivo falhou.  O arquivo não pôde ser lido pelo aplicativo. Por favor, verifique as configurações do projeto.';
+$MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'O carregamento do arquivo falhou.  Provavelmente é devido ao tamanho do arquivo ser maior do que o permitido atualmente por esta instalação PHP.';
+$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Um parâmetro necessário para esta página (%s) não foi encontrado.';
+$MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Este nome de usuário já está sendo usado.  Por favor, volte e selecione um outro.';
+$MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Opção de configuração \'%s\' não encontrada.';
+$MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'A opção de configuração \'%s\' não pode ser ajustada no banco-de-dados.  Ela deve ser ajustada em config_inc.php.';
+$MANTIS_ERROR[ERROR_LANG_STRING_NOT_FOUND] = 'Texto \'%s\' não encontrado.';
+$MANTIS_ERROR[ERROR_BUGNOTE_NOT_FOUND] = 'Anotação não encontrada.';
+$MANTIS_ERROR[ERROR_PROJECT_NOT_FOUND] = 'Projeto não encontrado.';
+$MANTIS_ERROR[ERROR_DB_FIELD_NOT_FOUND] = 'Campo \'%s\' do banco-de-dados não encontrado.';
+$MANTIS_ERROR[ERROR_FTP_CONNECT_ERROR]	 = 'Incapaz de conectar ao servidor FTP.';
+$MANTIS_ERROR[ERROR_HANDLER_ACCESS_TOO_LOW]	 = 'A pessoa atribuída aa Demanda não possui direitos de acesso suficientes para tratar a Demanda neste status.';
+$MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Um projeto com este nome já existe.  Por favor, volte e entre um nome diferente.';
+$MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Nome inválido de projeto especificado.  Nomes de projeto não pode ser em branco.';
+$MANTIS_ERROR[ERROR_USER_NOT_FOUND]	 = 'Usuário não encontrado.';
+$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'A informação de login armazenada pelo seu navegador é inválida.  Talvez sua conta tenha sido apagada?';
+$MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'As preferências deste usuário não foram encontradas.';
+$MANTIS_ERROR[ERROR_NEWS_NOT_FOUND]	 = 'Notícia não encontrada.';
+$MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'A senha não combina com a verificação.';
+$MANTIS_ERROR[ERROR_GPC_ARRAY_EXPECTED]	 = 'Um \'array\' era esperado, mas um \'string\' foi recebido para %s.';
+$MANTIS_ERROR[ERROR_GPC_ARRAY_UNEXPECTED] = 'Um \'string\' era esperado, mas um \'array\' foi recebido para %s.';
+$MANTIS_ERROR[ERROR_GPC_NOT_NUMBER] = 'Um número era esperado para %s.';
+$MANTIS_ERROR[ERROR_BUG_NOT_FOUND]	 = 'Demanda %d não encontrada.';
+$MANTIS_ERROR[ERROR_FILTER_NOT_FOUND]	 = 'Filtro %d não encontrado.';
+$MANTIS_ERROR[ERROR_FILTER_TOO_OLD] = 'O filtro que você está tentando usar é muito velho e precisa ser atualizado, por favor, recrie-o';
+$MANTIS_ERROR[ERROR_EMAIL_INVALID]	 = 'E-mail inválido.';
+$MANTIS_ERROR[ERROR_EMAIL_DISPOSABLE] = 'Não é permitida a utilização de endereços de e-mail descartáveis.';
+$MANTIS_ERROR[ERROR_USER_PROFILE_NOT_FOUND] = 'Perfil não encontrado.';
+$MANTIS_ERROR[ERROR_FILE_NOT_ALLOWED]	 = 'Tipo de arquivo não permitido para carregamento.';
+$MANTIS_ERROR[ERROR_FILE_DUPLICATE]	 = 'Este é um arquivo duplicado.  Por favor, apague o arquivo antes.';
+$MANTIS_ERROR[ERROR_FILE_INVALID_UPLOAD_PATH] = 'Caminho para carregamento inválido.  O diretório não existe ou não pode ser escrito pelo servidor web';
+$MANTIS_ERROR[ERROR_FILE_NO_UPLOAD_FAILURE] = 'Nenhum arquivo foi carregado. Por favor, volte e escolha um arquivo antes de pressionar o botão Carregar';
+$MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'O arquivo carregado não pôde ser movido para o diretório de armazenamento. O diretório não existe ou não é gravável pelo servidor web';
+$MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF]	 = 'Você não pode ajustar uma Demanda como duplicata de dele mesmo.';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Campo personalizado não encontrado';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Este é um nome duplicado.';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Pelo menos um projeto ainda usa este campo.';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor inválido para o campo';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definição de campo personalizado inválida';
+$MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED]	 = 'Autenticação LDAP Authentication Falhou';
+$MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Conexão ao Servidor LDAP Falhou';
+$MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED]	 = 'Atualização de Registro LDAP falhou.';
+$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Registro de Usuário LDAP Não Encontrado.';
+$MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Extensão LDAP Não Carregada.';
+$MANTIS_ERROR[ERROR_DB_CONNECT_FAILED]	 = 'Conexão ao banco-de-dados falhou. Erro recebido do banco-de-dados foi #%d: "%s"';
+$MANTIS_ERROR[ERROR_DB_QUERY_FAILED]	 = 'Consulta ao banco-de-dados falhou.  Erro recebido do banco-de-dados foi #%d: "%s" para a consulta: "%s"';
+$MANTIS_ERROR[ERROR_DB_SELECT_FAILED]	 = 'Seleção de banco-de-dados falhou.  Erro recebido do banco-de-dados foi #%d: "%s"';
+$MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Uma categoria com este nome já existe.';
+$MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Não foi especificada uma ação de cópia.';
+$MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Categoria não encontrada.';
+$MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Uma versão com este nome já existe.';
+$MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Versão \'%s\' não encontrada.';
+$MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'O nome de usuário não é válido. Nomes de usuário podem conter apenas letras, números, espaços, hífens e sublinhados.';
+$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'O nome real de usuário não é válido.';
+$MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'O usuário não possui o nível de acesso necessário';
+$MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'O "Nome Verdadeiro" escolhido é igual ao nome de login de outro usuário. Por favor escolha outro.';
+$MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'O suporte a patrocínio não está habilitado.';
+$MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_FOUND] = 'Patrocínio %d não encontrado.';
+$MANTIS_ERROR[ERROR_SPONSORSHIP_AMOUNT_TOO_LOW] = 'O patrocínio (%s) está abaixo da quantia mínima (%s).';
+$MANTIS_ERROR[ERROR_SPONSORSHIP_HANDLER_ACCESS_LEVEL_TOO_LOW] = 'Esta pessoa não possui o nível de acesso necessário para tratar Demandas patrocinados.';
+$MANTIS_ERROR[ERROR_SPONSORSHIP_ASSIGNER_ACCESS_LEVEL_TOO_LOW] = 'Acesso Negado: Atribuir Demandas patrocinados requer um nível de acesso maior.';
+$MANTIS_ERROR[ERROR_SPONSORSHIP_SPONSOR_NO_EMAIL] = 'Patrocinador não forneceu um endereço de e-mail. Por favor, atualize seu perfil.';
+$MANTIS_ERROR[ERROR_CONFIG_OPT_INVALID] = 'A opção de configuração \'%s\' tem um valor inválido \'%s\'';
+$MANTIS_ERROR[ERROR_BUG_READ_ONLY_ACTION_DENIED] = 'A ação não pode ser realizada porque a Demanda \'%d\' é somente-leitura';
+$MANTIS_ERROR[ERROR_RELATIONSHIP_ALREADY_EXISTS] = "Já existe uma relação entre estes duas Demandas.";
+$MANTIS_ERROR[ERROR_RELATIONSHIP_NOT_FOUND] = "Relação não encontrada.";
+$MANTIS_ERROR[ERROR_RELATIONSHIP_ACCESS_LEVEL_TO_DEST_BUG_TOO_LOW] = "Acesso negado: A Demanda %d requer um nível de acesso maior.";
+$MANTIS_ERROR[ERROR_RELATIONSHIP_SAME_BUG] = "Uma Demanda não pode se relacionar com si próprio.";
+$MANTIS_ERROR[ERROR_SIGNUP_NOT_MATCHING_CAPTCHA] = 'O código de confirmação não combina. Por favor, tente novamente.';
+$MANTIS_ERROR[ERROR_LOST_PASSWORD_NOT_ENABLED] = 'O recurso de recuperação de senha não está disponível.';
+$MANTIS_ERROR[ERROR_LOST_PASSWORD_NO_EMAIL_SPECIFIED] = 'Você deve fornecer um endereço de e-mail para poder reajustar a senha.';
+$MANTIS_ERROR[ERROR_LOST_PASSWORD_NOT_MATCHING_DATA] = 'A informação fornecida não combina com nenhuma conta registrada!';
+$MANTIS_ERROR[ERROR_LOST_PASSWORD_CONFIRM_HASH_INVALID] = 'O endereço de confirmação é inválido ou já foi usado. Por favor, registre-se novamente.';
+$MANTIS_ERROR[ERROR_LOST_PASSWORD_MAX_IN_PROGRESS_ATTEMPTS_REACHED] = 'O número máximo de solicitações em progresso foi atingido. Por favor, contate o administrador do sistema.';
+$MANTIS_ERROR[ERROR_PROJECT_RECURSIVE_HIERARCHY] = 'Esta operação criaria um laço na hierarquia de subprojetos.';
+$MANTIS_ERROR[ERROR_USER_CHANGE_LAST_ADMIN] = 'Você não pode alterar o nível de acesso do único ADMINISTRADOR do sistema.';
+$MANTIS_ERROR[ERROR_PAGE_REDIRECTION] = 'Erro de redirecionamento de página, certifique-se que não haja espaços fora do bloco PHP (&lt;?php ?&gt;) nos arquivos config_inc.php ou custom_*.php.';
+$MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Integração com Twitter requer a extensão PHP CURL que não está isntalada.';
+$MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Não foi possível encontrar um marcador com esse name.';
+$MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Um marcador com esse nome já existe.';
+$MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Nome de marcador não é válido.';
+$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Esse marcador não está aplicado a essa Demanda.';
+$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Esse marcador já está aplicado a essa Demanda.';
+$MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Símbolo nõ foi encontrado.';
+
+$s_login_error = 'Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.';
+$s_login_cookies_disabled = 'Seu navegador não sabe manusear cookies ou se recusa a manuseá-los.';
+
+# General Strings
+$s_go_back = 'Voltar';
+$s_proceed = 'Clique aqui para prosseguir';
+
+$s_switch = 'Mudar';
+$s_logged_in_as = 'Acessando como';
+
+$s_prefix_for_deleted_users = 'usuário';
+
+$s_administrator = 'administrador';
+$s_myself = "Eu mesmo";
+$s_default_access_level = 'Nível de acesso padrão';
+
+$s_issue_status_percentage = 'Porcentagem dos Status das Demandas';
+
+# Enum Strings
+# $s_access_levels_enum_string = '10:visualizador,25:solicitante,40:atualizador,55:desenvolvedor,70:gerente,90:administrador';
+$s_access_levels_enum_string = '10:visualizador,25:solicitante,55:desenvolvedor,70:gerente,90:administrador';
+$s_project_status_enum_string = '10:desenvolvimento,30:release,50:estável,70:obsoleto';
+$s_project_view_state_enum_string = '10:público,50:privado';
+$s_view_state_enum_string = '10:público,50:privado';
+
+$s_priority_enum_string = '10:nenhuma,20:baixa,30:normal,40:alta,50:urgente,60:imediato';
+$s_severity_enum_string = '10:mínima,20:baixa,30:normal,40:alta,50:altíssima';
+$s_reproducibility_enum_string = '10:sempre,30:às vezes,50:aleatório,70:não se tentou,90:incapaz de reproduzir,100:N/D';
+$s_status_enum_string = '10:nova,20:reenviada,30:em execução,40:paralisada,50:atribuída,70:em testes,80:resolvido,85:recusada,90:entregue/finalizado';
+$s_resolution_enum_string = '10:pendente,20:feito,30:reaberta (pendente),80:adiado,90:cancelado';
+$s_projection_enum_string = '10:nenhuma,30:mínimo,50:correção pequena,70:grande recriação,90:redesenvolvimento';
+$s_eta_enum_string = '10:nenhum,20:menos de 1 dia,30:2 a 3 dias,40:menos de 1 semana,50:menos de 1 mês,60:mais de 1 mês';
+$s_sponsorship_enum_string = '0:Não pago,1:Solicitado,2:Pago';
+
+# Email Strings
+$s_new_account_subject = 'Registro de conta';
+$s_new_account_greeting = 'Obrigado por se registrar. Você possui uma conta com o nome de usuário \'';
+$s_new_account_greeting2 = '\'. Para completar seu registro, visite o endereço a seguir (certifique-se que ele seja digitado como uma única linha) e ajuste a sua própria senha de acesso:';
+$s_new_account_username = 'Nome de usuário: ';
+$s_new_account_message = 'Se você não solicitou nenhum registro, ignore esta mensagem e nada irá acontecer.' . "\n\n";
+$s_new_account_do_not_reply = 'NÃO RESPONDA A ESTA MENSAGEM';
+$s_new_account_email = 'E-mail: ';
+$s_new_account_IP = 'Endereço IP remoto: ';
+$s_new_account_signup_msg = 'A seguinte conta foi criada:';
+
+$s_reset_request_msg = 'Alguém (presumidamente você) solicitou uma troca de senha através da verificação de e-mail. Se este não foi você, ignore esta mensagem e nada irá acontecer.' . "\n\n" . 'Se você solicitou esta verificação, visite o seguinte endereço para alterar a sua senha:';
+$s_reset_request_in_progress_msg = 'Se você forneceu o nome de usuário e endereço de e-mail corretos para a sua conta, nós teremos enviado agora uma mensagem de confirmação para este endereço de e-mail. Assim que a mensagem for recebida, siga as instruções fornecidas para mudar a senha da sua conta.';
+
+$s_email_notification_title_for_status_bug_new = 'A seguinte Demanda está agora com status NOVA (novamente).';
+$s_email_notification_title_for_status_bug_feedback = 'A seguinte Demanda requer o seu RETORNO.';
+$s_email_notification_title_for_status_bug_acknowledged = 'A seguinte Demanda foi ADMITIDA.';
+$s_email_notification_title_for_status_bug_confirmed = 'A seguinte Demanda foi CONFIRMADA.';
+$s_email_notification_title_for_status_bug_assigned = 'A seguinte Demanda foi ATRIBUÍDA.';
+$s_email_notification_title_for_status_bug_testes = 'A seguinte Demanda foi enviada para TESTES.';
+$s_email_notification_title_for_status_bug_resolved = 'A seguinte Demanda foi RESOLVIDA.';
+$s_email_notification_title_for_status_bug_closed = 'A seguinte Demanda foi ENTREGUE.';
+
+#inserido para atender a mensagem do bot�o do status criado:
+$s_email_notification_title_for_status_bug_teste = '';
+
+$s_email_notification_title_for_action_bug_submitted = 'A seguinte Demanda foi ENVIADA.';
+$s_email_notification_title_for_action_bug_assigned = 'A seguinte Demanda foi ATRIBUÍDA.';
+$s_email_notification_title_for_action_bug_reopened = 'A seguinte Demanda foi REABERTA.';
+$s_email_notification_title_for_action_bug_deleted = 'A seguinte Demanda foi APAGADA.';
+$s_email_notification_title_for_action_bug_updated = 'A seguinte Demanda foi ATUALIZADA.';
+$s_email_notification_title_for_action_sponsorship_added = 'A seguinte Demanda foi PATROCINADO.';
+$s_email_notification_title_for_action_sponsorship_updated = 'O patrocínio dA seguinte Demanda foi modificado.';
+$s_email_notification_title_for_action_sponsorship_deleted = 'O patrocínio dA seguinte Demanda foi retirado.';
+
+$s_email_notification_title_for_action_bugnote_submitted = 'Uma ANOTAÇÃO foi adicionada a esta Demanda.';
+$s_email_notification_title_for_action_duplicate_of_relationship_added = "A seguinte Demanda foi marcada como DUPLICADA da Demanda %s.";
+$s_email_notification_title_for_action_has_duplicate_relationship_added = "A Demanda %s foi marcada como DUPLICADA dA seguinte Demanda.";
+$s_email_notification_title_for_action_related_to_relationship_added = "A seguinte Demanda foi marcada como RELACIONADA aa Demanda %s.";
+$s_email_notification_title_for_action_dependant_on_relationship_added = "A seguinte Demanda foi marcada como PAI da Demanda %s.";
+$s_email_notification_title_for_action_blocks_relationship_added = "A seguinte Demanda foi marcada como FILHA da Demanda %s.";
+$s_email_notification_title_for_action_duplicate_of_relationship_deleted = "A seguinte Demanda foi desmarcada como DUPLICADA da Demanda %s.";
+$s_email_notification_title_for_action_has_duplicate_relationship_deleted = "A Demanda %s foi removida como DUPLICADA dA seguinte Demanda.";
+$s_email_notification_title_for_action_related_to_relationship_deleted = "A seguinte Demanda foi marcada como NÃO-RELACIONADA aa Demanda %s.";
+$s_email_notification_title_for_action_dependant_on_relationship_deleted = "A seguinte Demanda foi removida como PAI da Demanda %s.";
+$s_email_notification_title_for_action_blocks_relationship_deleted = "A seguinte Demanda foi removida como FILHA da Demanda %s.";
+$s_email_notification_title_for_action_relationship_child_resolved = "A Demanda RELACIONADA %s foi RESOLVIDA.";
+$s_email_notification_title_for_action_relationship_child_closed = "A Demanda RELACIONADA %s foi ENTREGUE.";
+
+$s_email_reporter = 'Relatada por';
+$s_email_handler = 'Atribuída a';
+$s_email_project = 'Projeto';
+$s_email_bug = 'Núm da Demanda';
+$s_email_category = 'Categoria';
+$s_email_reproducibility = 'Freqüência';
+$s_email_severity = 'Prioridade';
+$s_email_priority = 'Prioridade (2)';
+$s_email_status = 'Status';
+$s_email_resolution = 'Resolução';
+$s_email_duplicate = 'Duplicada';
+$s_email_fixed_in_version = 'Corrigida na Versão';
+$s_email_target_version = 'Prevista para a Versão';
+$s_email_date_submitted = 'Data de Envio';
+$s_email_last_modified = 'Última Modificação';
+$s_email_summary = 'Resumo';
+$s_email_description = 'Descrição';
+
+# account_delete.php
+$s_account_protected_msg = 'Conta protegida. Você não pode mudar as configurações...';
+$s_account_removed_msg = 'Sua conta foi removida...';
+
+# account_delete_page.php
+$s_confirm_delete_msg = 'Você tem certeza que deseja apagar a sua conta?';
+$s_delete_account_button = 'Apagar Conta';
+
+# account_page.php
+$s_manage_profiles_link = 'Perfís';
+$s_change_preferences_link = 'Preferências';
+$s_edit_account_title = 'Alterar Conta';
+$s_username = 'Nome do Usuário';
+$s_realname = 'Nome Verdadeiro';
+$s_email = 'E-Mail';
+$s_password = 'Senha';
+$s_no_password_change = 'A senha é controlada por outro sistema, e por este motivo, não pode ser alterada aqui.';
+$s_confirm_password = 'Confirmar Senha';
+$s_access_level = 'Nível de Acesso';
+$s_update_user_button = 'Atualizar Usuário';
+$s_verify_warning = 'As informações da sua conta foram verificadas. A mensagem de confirmação de conta que você recebeu não é mais válida.';
+$s_verify_change_password = 'Você deve ajustar uma senha aqui para que lhe seja permitido acessar novamente.';
+
+# account_prefs_page.php
+$s_default_account_preferences_title = 'Preferências da Conta';
+$s_default_project = 'Projeto Padrão';
+$s_advanced_report = 'Relatório Avançado';
+$s_advanced_view = 'Visualização Avançada';
+$s_advanced_update = 'Atualização Avançada';
+$s_refresh_delay = 'Tempo de Renovação';
+$s_redirect_delay = 'Tempo de Redirecionamento';
+$s_with_minimum_severity = 'Com a prioridade mínima';
+$s_bugnote_order = 'Ordem de Classificação de Anotações';
+$s_bugnote_order_asc = 'Ascendente';
+$s_bugnote_order_desc = 'Descendente';
+$s_email_on_new = 'Enviar e-mail para Novas Demandas';
+$s_email_on_assigned = 'Enviar e-mail para Mudança de Atribuição';
+$s_email_on_feedback = 'Enviar e-mail para Retornos';
+$s_email_on_testes = 'Enviar e-mail para Demandas Em testes';
+$s_email_on_resolved = 'Enviar e-mail para Demandas Resolvidas';
+$s_email_on_closed = 'Enviar e-mail para Demandas Entregues';
+$s_email_on_reopened = 'Enviar e-mail para Demandas Reabertas';
+$s_email_on_bugnote_added = 'Enviar e-mail para Anotações Adicionadas';
+$s_email_on_status_change = 'Enviar e-mail para Mudança de Status';
+$s_email_on_priority_change = 'Enviar e-mail para Mudança de Prioridade';
+$s_email_bugnote_limit = 'Limite de Anotações por e-mail';
+$s_language = 'Idioma';
+$s_update_prefs_button = 'Atualizar Preferências';
+$s_reset_prefs_button = 'Redefinir Preferências';
+
+# account_prefs_reset.php
+$s_prefs_reset_msg = 'As preferências foram redefinidas...';
+
+# account_prefs_update.php
+$s_prefs_updated_msg = 'As preferências foram atualizadas...';
+
+# account_profile_add.php
+$s_profile_added_msg = 'Perfil adicionado...';
+
+# account_profile_delete.php
+$s_profile_deleted_msg = 'Perfil apagado...';
+
+# account_profile_edit_page.php
+$s_edit_profile_title = 'Alterar Perfil';
+$s_platform = 'Plataforma';
+$s_operating_system = 'Sistema Operacional';
+$s_additional_description = 'Descrição Adicional';
+$s_update_profile_button = 'Atualizar Perfil';
+
+# account_profile_make_default.php
+$s_profile_defaulted_msg = 'Perfil padrão atualizado...';
+
+# account_profile_manage_page.php
+$s_add_profile_title = 'Adicionar Perfil';
+$s_add_profile_button = 'Adicionar Perfil';
+$s_edit_or_delete_profiles_title = 'Alterar ou Apagar Perfís';
+$s_edit_profile = 'Alterar Perfil';
+$s_make_default = 'Tornar Padrão';
+$s_delete_profile = 'Apagar Perfil';
+$s_select_profile = 'Selecionar Perfil';
+$s_submit_button = 'Enviar';
+
+# account_profile_update.php
+$s_profile_updated_msg = 'Perfil atualizado...';
+
+# account_sponsor_page.php
+$s_my_sponsorship = 'Meus Patrocínios';
+$s_update_sponsorship_button = 'Alterar Status do Pagamento';
+$s_no_sponsored = 'Nenhuma Demanda patrocinada atribuída a você foi encontrado.';
+$s_own_sponsored = 'Demandas que Você Patrocinou:';
+$s_issues_handled = 'Demandas Patrocinadas Atribuídas a Você:';
+$s_no_own_sponsored = 'Você não patrocinou nenhuma Demanda.';
+$s_sponsor = 'Patrocinador';	# like in 'The sponsor of...'
+$s_sponsor_verb = 'Patrocinar';	# like in 'Sponsor it!'
+$s_amount = 'Quantia';
+$s_total_owing = 'Total Devedor';
+$s_total_paid = 'Total Pago';
+$s_sponsor_hide = 'Ocultar Resolvidos e Pagos';
+$s_sponsor_show = 'Mostrar Todos';
+
+# account_sponsor_update.php
+$s_payment_updated = 'Informações de pagamento atualizadas.';
+
+# account_update.php
+$s_account_updated_msg = 'Sua conta foi atualizada com sucesso...';
+$s_email_updated = 'Endereço de email atualizado com sucesso';
+$s_realname_duplicated = 'O nome verdadeiro está sendo usado por outro usuário';
+$s_realname_updated = 'Nome verdadeiro atualizado com sucesso';
+$s_password_updated = 'Senha atualizada com sucesso';
+
+# adm_permission_report.php
+
+# bug_action_group_page
+$s_multiple_projects = 'As Demandas que você selecionou são de diferentes projetos. Os parâmetros abaixo refletem as configurações para todos os projetos. Se esta informação estiver incorreta, por favor, tente sua alteração com um número menor de Demandas selecionados.';
+
+# bug_assign.php
+$s_bug_assign_msg = 'A Demanda foi atribuída com sucesso...';
+
+# bug_change_status_page.php
+$s_new_bug_title = 'Nova Demanda';
+$s_feedback_bug_title = 'Solicitar Retorno para a Demanda';
+$s_acknowledged_bug_title = 'Iniciar Atividade';
+$s_confirmed_bug_title = 'Paralisar Demanda';
+$s_assigned_bug_title = 'Atribuir Demanda';
+$s_new_bug_button = 'Nova Demanda';
+$s_feedback_bug_button = 'Solicitar Retorno';
+$s_acknowledged_bug_button = 'Iniciar Atividade';
+$s_confirmed_bug_button = 'Paralisar Demanda';
+$s_assigned_bug_button = 'Atribuir Demanda';
+
+# bug_close.php
+$s_bug_close_msg = 'A Demanda foi concluída / entregue...';
+$s_close_immediately = 'Concluir / entregar imediatamente:';
+
+# bug_close_page.php
+$s_closed_bug_title = 'Concluir Demanda / Entregar';
+
+# bug_delete.php
+$s_bug_deleted_msg = 'A Demanda foi apagada...';
+
+# bug_delete_page.php
+$s_delete_bug_sure_msg = 'Você tem certeza que deseja apagar esta Demanda?';
+$s_delete_bug_button = 'Apagar';
+
+# bug_monitor.php
+$s_monitor_bug_button = 'Monitorar';
+$s_unmonitor_bug_button = 'Parar de Monitorar';
+
+# bug_file_add.php
+$s_file_upload_msg = 'Arquivo carregado com sucesso';
+
+# bug_file_upload_inc.php
+$s_upload_file = 'Carregar Arquivo';
+$s_select_file = 'Selecionar Arquivo';
+$s_upload_file_button = 'Carregar Arquivo';
+$s_max_file_size = 'Tamanho máximo';
+
+# bug_reopen.php
+$s_bug_reopened_msg = 'A Demanda foi reenviada...';
+$s_reopen_add_bugnote_title = 'Adicionar Anotação do Motivo para a Reabertura da Demanda';
+$s_bugnote_add_reopen_button = 'Adicionar Anotação e Reabrir Demanda';
+
+#em testes
+$s_testes_bug_title = 'Enviar demanda para testes';
+$s_testes_bug_button = 'Enviar demanda para testes';
+
+# bug_resolve_page.php
+$s_resolved_bug_title = 'Resolver Demanda';
+$s_resolved_bug_button = 'Resolver Demanda';
+
+# bug_resolve_page2.php
+$s_bug_resolved_msg = 'A Demanda foi resolvida. Digite a anotação abaixo...';
+$s_resolve_add_bugnote_title = 'Adicionar Anotação para a Resolução da Demanda';
+$s_bugnote_add_resolve_button = 'Adicionar Anotação';
+
+# bug_reminder_page.php
+$s_from = 'De';
+$s_to = 'Para';
+$s_on = 'Em';
+$s_sent_you_this_reminder_about = 'lhe enviou este lembrete sobre';
+$s_bug_reminder = 'Enviar um lembrete';
+$s_reminder_sent_to = 'Lembrete enviado para';
+$s_bug_send_button = 'Enviar';
+$s_reminder = 'Lembrete';
+$s_reminder_explain = 'Esta anotação será enviada aos destinatários listados, solicitando retorno sobre esta Demanda.';
+$s_reminder_monitor = 'Estes usuários também começarão a monitorar a Demanda. Eles podem se desinscrever usando o botão "Parar de Monitorar".';
+$s_reminder_store = 'Esta anotação será registrada na Demanda.';
+
+# bug_set_sponsorship.php
+$s_confirm_sponsorship = 'Por favor, confirme que você deseja patrocinar a Demanda %d por %s.';
+
+# bug_update.php
+$s_bug_updated_msg = 'A Demanda foi atualizado com sucesso...';
+
+# bug_update_advanced_page.php
+$s_back_to_bug_link = 'Voltar aa Demanda';
+$s_update_simple_link = 'Atualização Simples';
+$s_updating_bug_advanced_title = 'Atualizar Informações da Demanda';
+$s_id = 'Núm';
+$s_category = 'Categoria';
+$s_severity = 'Prioridade';
+$s_reproducibility = 'Freqüência';
+$s_date_submitted = 'Data de Envio';
+$s_last_update = 'Última Atualização';
+$s_reporter = 'Relator';
+$s_assigned_to = 'Atribuída a';
+$s_priority = 'Prioridade';
+$s_resolution = 'Resolução';
+$s_status = 'Status';
+$s_duplicate_id = 'Núm Duplicado';
+$s_os = 'SO';
+$s_projection = 'Projeção';
+$s_os_version = 'Versão SO';
+$s_eta = 'Tempo Estimado';
+$s_product_version = 'Versão do Produto';
+$s_build = 'Build';
+$s_fixed_in_version = 'Corrigido na Versão';
+$s_target_version = 'Previsto para a Versão';
+$s_votes = 'Votos';
+$s_summary = 'Resumo';
+$s_description = 'Descrição';
+$s_steps_to_reproduce = 'Passos para Reproduzir';
+$s_update_information_button = 'Atualizar Informação';
+$s_sticky_issue = 'Demanda "Pegajosa"';
+$s_profile = 'Perfil';
+
+# bug_update_page.php
+$s_update_advanced_link = 'Atualização Avançada';
+$s_updating_bug_simple_title = 'Atualizar Informações da Demanda';
+
+# bug_vote_add.php
+$s_vote_added_msg = 'O voto foi adicionado...';
+
+# bugnote_add.php
+$s_bugnote_added_msg = 'Anotação adicionada...';
+
+# bugnote_delete.php
+$s_bugnote_deleted_msg = 'A anotação foi apagada com sucesso...';
+$s_bug_notes_title = 'Anotações';
+
+# bugnote_edit_page.php
+$s_edit_bugnote_title = 'Alterar Anotações';
+
+# bugnote_inc.php
+$s_no_bugnotes_msg = 'Não há anotações anexadas a esta Demanda.';
+$s_delete_link = 'Apagar';
+$s_add_bugnote_title = 'Adicionar Anotação';
+$s_add_bugnote_button = 'Adicionar Anotação';
+$s_bugnote_edit_link = 'Alterar';
+$s_closed_bug_button = 'Fechar Demanda';
+
+# bugnote_update.php
+$s_bugnote_updated_msg = 'A anotação foi atualizada com sucesso...';
+$s_edited_on = 'alterado em: ';
+
+# file_api.php
+$s_show_content ='Mostrar Conteúdo';
+
+# index.php
+$s_click_to_login = 'Clique aqui para acessar';
+
+# login.php
+
+# login_page.php
+#@@@ should the following string be related to $g_window_title?
+$s_login_page_info = 'Bem-vindo ao Gerenciador de Demandas.';
+$s_login_title = 'Login';
+$s_save_login = 'Salvar Login';
+$s_choose_project = 'Escolher Projeto';
+$s_login_button = 'Entrar';
+$s_signup_link = 'criar uma nova conta';
+$s_lost_password_link = 'Perdeu a sua senha?';
+
+# login_select_proj_page.php
+$s_select_project_button = 'Selecionar Projeto';
+
+# logout_page.php
+$s_logged_out_title = 'Saindo...';
+$s_redirecting = '...Redirecionando';
+$s_here = 'Aqui';
+
+# lost_pwd_page.php
+$s_lost_password_title = "Reajuste de Senha";
+$s_lost_password_done_title = "Mensagem de Senha Enviada";
+$s_lost_password_subject = "Reajuste de Senha";
+$s_lost_password_info = "Para reestabelecer sua senha perdida, por favor forneça o nome e endereço de e-mail da sua conta.<br/><br/>Se os dados corresponderem a uma conta válida, lhe será enviado um endereço especial via e-mail que contém um código de validação para a sua conta. Por favor, siga este link para mudar a sua senha.";
+$s_lost_password_confirm_hash_OK = "Sua confirmação foi aceita. Por favor, atualize sua senha.";
+
+# main_page.php
+$s_open_and_assigned_to_me = 'Abertas e atribuídas a mim';
+$s_open_and_reported_to_me = 'Abertas e solicitadas por mim';
+$s_newer_news_link = 'Notícias Recentes';
+$s_older_news_link = 'Notícias Antigas';
+$s_archives = 'Arquivos';
+$s_rss = 'RSS';
+
+# manage_create_new_user.php
+$s_created_user_part1 = 'Usuário';
+$s_created_user_part2 = 'criado com um nível de acesso de';
+
+# manage_create_user_page.php
+$s_create_new_account_title = 'Criar Nova Conta';
+$s_verify_password = 'Redigitar Senha';
+$s_enabled = 'Habilitado';
+$s_protected = 'Protegido';
+$s_create_user_button = 'Criar Usuário';
+
+# manage_page.php
+$s_hide_disabled = 'Ocultar Desabilitados';
+$s_filter_button = 'Aplicar Filtro';
+$s_create_filter_link = 'Criar Link Permanente';
+$s_create_short_link = 'Criar Link Reduzido';
+$s_filter_permalink = 'O endereço a seguir é um link permanente para o filtro atualmente configurado:';
+$s_manage_users_link = 'Gerenciar Usuários';
+$s_manage_projects_link = 'Gerenciar Projetos';
+$s_manage_custom_field_link = 'Gerenciar Campos Personalizados';
+$s_manage_global_profiles_link = 'Gerenciar Perfís Globais';
+$s_permissions_summary_report = 'Relatório de Permissões';
+$s_manage_config_link = 'Gerenciar Configuração';
+$s_manage_threshold_config = 'Limiares do Fluxo de Trabalho';
+$s_manage_email_config = 'Notificações por E-Mail';
+$s_manage_workflow_config = 'Transições de Fluxo de Trabalho';
+$s_create_new_account_link = 'Criar Nova Conta';
+$s_projects_link = 'Projetos';
+$s_documentation_link = 'Documentação';
+$s_new_accounts_title = 'Contas Novas';
+$s_1_week_title = '1 Semana';
+$s_never_logged_in_title = 'Nunca Entraram';
+$s_prune_accounts = 'Apagar Contas';
+$s_hide_inactive = 'Ocultar Inativos';
+$s_manage_accounts_title = 'Gerenciar Contas';
+$s_p = 'p';
+$s_date_created = 'Data de Criação';
+$s_last_visit = 'Última Visita';
+$s_edit_user_link = 'Alterar Usuário';
+
+# manage_config_email_page
+$s_config_all_projects = 'Nota: Estas configurações afetam TODOS OS PROJETOS.';
+$s_config_project = 'Nota: Estas configurações afetam apenas o projeto %s.';
+$s_colour_coding = 'Na tabela abaixo, o seguinte código de cores se aplica:';
+$s_colour_project = 'Configuração do projeto sobrepõe as outras.';
+$s_colour_global = 'Todas as configurações do projeto sobrepõem as configurações padrão.';
+$s_issue_reporter = 'Usuário que reportou a Demanda';
+$s_issue_handler = 'Usuário que está tratando a Demanda';
+$s_users_added_bugnote = 'Usuários que adicionaram anotações';
+$s_change_configuration = 'Atualizar Configuração';
+$s_message = 'Mensagem';
+$s_default_notify = 'Ajustando opções de notificação padrão para';
+$s_action_notify = 'Ajustando opções de notificação de ação para';
+$s_notify_defaults_change_access = 'Quem pode alterar os padrões de notificação';
+$s_notify_actions_change_access = 'Quem pode alterar as notificações';
+$s_revert_to_system = "Apagar Todas as Configurações de Todos os Projetos";
+$s_revert_to_all_project = "Apagar as Configurações Específicas deste Projeto";
+
+# manage_config_workflow_page
+$s_non_existent = 'inexistente';
+$s_current_status = 'Status Atual';
+$s_next_status = 'Próximo Status';
+$s_workflow = 'Fluxo de Trabalho';
+$s_workflow_thresholds = 'Limiares que Afetam o Fluxo de Trabalho';
+$s_threshold = 'Limiar';
+$s_status_level = 'Status';
+$s_alter_level = 'Quem pode alterar este valor';
+$s_validation = 'Validação do Fluxo de Trabalho';
+$s_comment = 'Comentário da Validação';
+$s_superfluous = 'Um arco de um status para ele mesmo é implícito, e não precisa ser fornecido explicitamente';
+$s_unreachable = 'Você não pode mover uma Demanda para este status';
+$s_no_exit = 'Você não pode mover uma Demanda para fora deste status';
+$s_access_levels = 'Níveis de Acesso';
+$s_access_change = 'Nível de Acesso Mínimo para Alterar para este Status';
+$s_desc_bug_submit_status = 'Status para o qual um nova Demanda é ajustado';
+$s_desc_bug_reopen_status = 'Status para o qual Demandas reabertas são ajustados';
+$s_desc_bug_resolved_status_threshold = 'Status o qual uma Demanda é considerado resolvido';
+$s_workflow_change_access = 'Quem pode alterar o fluxo de trabalho';
+$s_access_change_access = 'Quem pode alterar os níveis de acesso';
+
+# manage_config_workflow_set
+$s_default_not_in_flow = 'O status padrão de %s não está selecionado nos próximos status de %s. Este será ignorado';
+
+# manage_config_work_threshold_page
+$s_assign_issue = 'Atribuir uma Demanda';
+$s_allow_close_immediate = 'Permitir que a Demanda seja Entregue ao ser Resolvido';
+$s_allow_reporter_close = 'Permitir ao solicitante fechar a Demanda';
+$s_allow_reporter_reopen = 'Permitir ao solicitante reabrir a Demanda';
+$s_set_status_assigned = 'Ajustar status na atribuição';
+$s_allow_user_edit = 'Permitir que o usuário altere suas próprias anotações';
+$s_limit_access = 'Limitar o acesso dos solicitantes as suas próprioas Demandas';
+$s_submit_status = 'Status para o qual novas Demandas são ajustados';
+$s_assigned_status = 'Status para o qual Demandas auto-atribuídas são ajustados';
+$s_resolved_status = 'Status o qual uma Demanda é considerado resolvida';
+$s_readonly_status = 'Status o qual uma Demanda se torna somente-leitura';
+$s_reopen_status = 'Status para o qual Demandas reabertas são ajustadas';
+$s_reopen_resolution = 'Resolução para a qual Demandas reabertos são ajustados';
+
+# manage_config_revert_page
+$s_config_delete_sure = 'Você tem certeza que deseja apagar as configurações para';
+$s_in_project = 'no projeto';
+$s_delete_config_button = 'Apagar Configurações';
+
+# adm_config_report.php
+$s_configuration_report = 'Relatório de Configuração';
+$s_database_configuration = 'Configuração de Banco-de-dados';
+$s_configuration_option = 'Opção de Configuração';
+$s_configuration_option_type = 'Tipo';
+$s_configuration_option_value = 'Valor';
+$s_all_users = 'Todos os Usuários';
+$s_set_configuration_option = 'Ajustar Opção de Configuração';
+$s_delete_config_sure_msg = 'Você tem certeza que deseja apagar esta opção de configuração?';
+
+# manage_proj_add.php
+$s_project_added_msg = 'O projeto foi adicionado com sucesso...';
+
+# manage_proj_category_add.php
+$s_category_added_msg = 'A categoria foi adicionada com sucesso...';
+
+# manage_proj_category_delete.php
+$s_category_deleted_msg = 'A categoria foi apagada com sucesso...';
+
+# manage_proj_category_delete_page.php
+$s_category_delete_sure_msg = 'Você tem certeza que deseja apagar esta categoria?';
+$s_delete_category_button = 'Apagar Categoria';
+
+# manage_proj_category_edit_page.php
+$s_edit_project_category_title = 'Alterar Categoria do Projeto';
+$s_update_category_button = 'Atualizar Categoria';
+
+# manage_proj_category_update.php
+$s_category_updated_msg = 'A categoria foi atualizada com sucesso...';
+
+# manage_proj_create_page.php
+$s_add_subproject_title = 'Adicionar Subprojeto';
+
+# manage_proj_delete.php
+$s_project_deleted_msg = 'O projeto foi removido com sucesso...';
+
+# manage_proj_delete_page.php
+$s_project_delete_msg = 'Você tem certeza que deseja apagar este projeto e todos os relatos de Demandas anexadas?';
+$s_project_delete_button = 'Apagar Projeto';
+
+# manage_proj_edit_page.php
+$s_edit_project_title = 'Alterar Projeto';
+$s_project_name = 'Nome do Projeto';
+$s_view_status = 'Visibilidade';
+$s_public = 'público';
+$s_private = 'privado';
+$s_update_project_button = 'Atualizar Projeto';
+$s_delete_project_button = 'Apagar Projeto';
+$s_copy_from = 'Copiar De';
+$s_copy_to = 'Copiar Para';
+$s_categories_and_version_title = 'Categorias e Versões';
+$s_categories = 'Categorias';
+$s_add_category_button = 'Adicionar Categoria';
+$s_versions = 'Versões';
+$s_add_version_button = 'Adicionar Versão';
+$s_add_and_edit_version_button = 'Adicionar e Alterar Versão';
+$s_edit_link = 'Alterar';
+$s_actions = 'Ações';
+$s_version = 'Versão';
+$s_timestamp = 'Data/hora do Lançamento';
+$s_update = 'Atualizar';
+$s_subprojects = 'Subprojetos';
+$s_add_subproject = 'Adicionar como Subprojeto';
+$s_create_new_subproject_link = 'Criar novo Subprojeto';
+$s_unlink_link = 'Desvincular';
+
+# manage_proj_menu_page.php
+$s_add_project_title = 'Adicionar Projeto';
+$s_upload_file_path = 'Caminho para Carregamento de Arquivos';
+$s_add_project_button = 'Adicionar Projeto';
+$s_projects_title = 'Projetos';
+$s_name = 'Nome';
+
+# manage_proj_update.php
+$s_project_updated_msg = 'O projeto foi atualizado com sucesso...';
+
+# manage_proj_version_add.php
+$s_version_added_msg = 'A versão foi adicionada com sucesso...';
+
+# manage_proj_version_delete.php
+$s_version_deleted_msg = 'A versão foi apagada com sucesso...';
+
+# manage_proj_version_delete_page.php
+$s_version_delete_sure = 'Você tem certeza que deseja apagar esta versão?';
+$s_delete_version_button = 'Apagar Versão';
+
+# manage_proj_version_edit_page.php
+$s_edit_project_version_title = 'Alterar Versão do Projeto';
+$s_update_version_button = 'Atualizar Versão';
+$s_released = 'Liberada';
+
+# manage_proj_version_update.php
+$s_version_updated_msg = 'A versão foi atualizada com sucesso...';
+
+# manage_user_delete.php
+$s_account_delete_protected_msg = 'Conta protegida. Não se pode apagar esta conta.';
+$s_account_deleted_msg = 'Conta apagada...';
+
+# manage_user_delete_page.php
+$s_delete_account_sure_msg = 'Você tem certeza que deseja apagar esta conta?';
+
+# manage_user_prune.php
+$s_accounts_pruned_msg = 'Todas as contas que nunca foram acessadas e foram criadas há mais do que uma semana foram removidas';
+$s_prune_accounts_button = 'Apagar contas velhas';
+$s_confirm_account_pruning = 'Você tem certeza que deseja apagar as contas velhas que nunca foram acessadas?';
+
+# manage_user_page.php
+$s_edit_user_title = 'Alterar Usuário';
+$s_reset_password_button = 'Redefinir Senha';
+$s_delete_user_button = 'Apagar Usuário';
+$s_reset_password_msg = 'Redefinir Senha enviará o endereço de confirmação via e-mail.';
+$s_reset_password_msg2 = 'Redefinir Senha deixará a senha em branco.';
+$s_show_all_users = 'TODOS';
+
+# manage_user_reset.php
+$s_account_reset_protected_msg = 'Conta protegida. Não se pode limpar a senha.';
+$s_account_reset_msg = 'Uma solicitação de confirmação foi enviada ao endereço de e-mail do usuário selecionado. Através deste, o usuário será capaz de alterar sua senha.';
+$s_account_reset_msg2 = 'A senha da conta foi deixada em branco...';
+
+# manage_user_update.php
+$s_manage_user_protected_msg = 'Conta protegida. Nível de acesso e proteção ativada. Atividade contrário, a conta foi atualizada...';
+$s_manage_user_updated_msg = 'Conta atualizada com sucesso...';
+
+# menu_inc.php
+$s_main_link = 'Principal';
+$s_view_bugs_link = 'Ver Demandas';
+$s_report_bug_link = 'Nova Demanda';
+$s_changelog_link = 'Registro de Mudanças';
+$s_roadmap_link = 'Planejamento';
+$s_summary_link = 'Relatórios';
+$s_account_link = 'Minha Conta';
+$s_users_link = 'Usuários';
+$s_manage_link = 'Gerenciar';
+$s_edit_news_link = 'Alterar Notícias';
+$s_docs_link = 'Docs';
+$s_logout_link = 'Sair';
+$s_my_view_link = 'Minha Visão';
+
+# meta_inc.php
+
+# my_view_page.php
+$s_my_view_title_unassigned = 'Não Atribuídas';
+$s_my_view_title_recent_mod = 'Modificadas Recentemente';
+$s_my_view_title_reported = 'Geradas por Mim';
+$s_my_view_title_assigned = 'Minhas Demandas';
+$s_my_view_title_testes = 'Em testes';
+$s_my_view_title_resolved = 'Resolvidas';
+$s_my_view_title_monitored = 'Monitoradas por Mim';
+$s_my_view_title_feedback = 'Esperando meu Retorno';
+$s_my_view_title_verify = 'Esperando minha Confirmação de Resolução';
+
+# news_add.php
+$s_news_added_msg = 'Notícia adicionada...';
+
+# news_delete.php
+$s_news_deleted_msg = 'Notícia apagada...';
+
+# news_delete_page.php
+$s_delete_news_sure_msg = 'Você tem certeza que deseja apagar esta notícia?';
+$s_delete_news_item_button = 'Apagar Notícia';
+
+# news_edit_page.php
+$s_edit_news_title = 'Alterar Notícias';
+$s_headline = 'Título';
+$s_body = 'Corpo';
+$s_update_news_button = 'Atualizar Notícia';
+
+# news_menu_page.php
+$s_add_news_title = 'Adicionar Notícia';
+$s_post_to = 'Anunciar em';
+$s_post_news_button = 'Publicar Notícia';
+$s_edit_or_delete_news_title = 'Alterar ou Apagar Notícia';
+$s_edit_post = 'Alterar Notícia';
+$s_delete_post = 'Apagar Notícia';
+$s_select_post = 'Selecionar Notícia';
+
+# news_update.php
+$s_news_updated_msg = 'Notícia atualizada...';
+
+# news_view_page.php
+$s_back_link = 'Voltar';
+
+# proj_doc_add.php
+$s_file_uploaded_msg = 'Arquivo carregado com sucesso';
+
+# proj_doc_add_page.php
+$s_upload_file_title = 'Carregar Arquivo';
+$s_title = 'Título';
+
+# proj_doc_delete.php
+$s_project_file_deleted_msg = 'Arquivo do projeto apagado';
+
+# proj_doc_delete_page.php
+$s_confirm_file_delete_msg = 'Você tem certeza que deseja apagar este arquivo?';
+
+# proj_doc_edit_page.php
+$s_filename = 'Nome do Arquivo';
+$s_file_update_button = 'Atualizar Arquivo';
+$s_file_delete_button = 'Apagar Arquivo';
+
+# proj_doc_page.php
+$s_project_documentation_title = 'Documentação do Projeto';
+$s_user_documentation = 'Documentação do Usuário';
+$s_project_documentation = 'Documentação do Projeto';
+$s_add_file = 'Adicionar Arquivo';
+
+# proj_doc_update.php
+$s_project_document_updated = 'Projeto atualizado com sucesso';
+
+# proj_user_add.php
+$s_project_user_added_msg = 'Usuário adicionado com sucesso ao projeto';
+
+# proj_user_delete.php
+$s_project_removed_user_msg = 'Usuário removido com sucesso do projeto';
+
+# proj_user_delete_page.php
+$s_remove_user_sure_msg = 'Você tem certeza que deseja remover este usuário?';
+$s_remove_user_button = 'Remover Usuário';
+$s_remove_all_users_sure_msg = 'Você tem certeza que deseja remover todos os usuários deste projeto?';
+$s_remove_all_users_button = 'Remover Todos os Usuários';
+
+# proj_user_menu_page.php
+$s_add_user_title = 'Adicionar usuário ao projeto';
+$s_add_user_button = 'Adicionar Usuário';
+$s_project_selection_title = 'Seleção de Projeto';
+$s_remove_link = 'Remover';
+$s_remove_all_link = 'Remover todos';
+
+# proj_user_update.php
+$s_updated_user_msg = 'Usuário atualizado com sucesso';
+
+# report_add.php
+$s_must_enter_category = 'Você deve selecionar uma categoria';
+$s_must_enter_severity = 'Você deve selecionar um nível de prioridade';
+$s_must_enter_reproducibility = 'Você deve selecionar um nível de freqüência';
+$s_must_enter_summary = 'Você deve digitar um resumo';
+$s_must_enter_description = 'Você deve digitar uma descrição';
+$s_report_more_bugs = 'Gerar Mais Demandas';
+$s_submission_thanks_msg = 'Agradecemos a sua colaboração';
+
+# report_bug_advanced_page.php
+$s_simple_report_link = 'Formulário Simples';
+$s_enter_report_details_title = 'Digite os Detalhes da Demanda';
+$s_required = 'requerido';
+$s_select_category = 'Selecione a Categoria';
+$s_select_reproducibility = 'Selecione a Freqüência';
+$s_select_severity = 'Selecione a Prioridade';
+$s_or_fill_in = 'OU Preencha';
+$s_assign_to = 'Atribuir a';
+$s_additional_information = 'Informações Adicionais';
+$s_submit_report_button = 'Gerar Demanda';
+$s_check_report_more_bugs = 'selecione para gerar outra Demanda';
+
+# report_bug_page.php
+$s_advanced_report_link = 'Formulário Avançado';
+$s_report_stay = 'Gerar Outra Demanda?';
+
+# set_project.php
+$s_selected_project = 'Projeto selecionado';
+$s_valid_project_msg = 'Você deve escolher um projeto válido';
+
+# signup.php
+$s_signup_done_title = 'Registro de conta processado';
+$s_password_emailed_msg = 'Parabéns. Você registrou com sucesso. Um e-mail de confirmação lhe está sendo enviado agora para verificar seu endereço de e-mail. Ao visitar o link enviado a você neste e-mail irá ativar sua conta.';
+$s_no_reponse_msg = 'Você terá sete dias para completar o processo de confirmação de conta; se você falhar em completar a confirmação de conta dentro de sete dias, esta conta recém-registrada poderá ser apagada.';
+
+# signup_page.php
+$s_signup_captcha_request = 'Digite o código que é mostrado no quadro à direita.';
+$s_signup_info = 'Ao completar este formulário e verificar suas respostas, um e-mail de confirmação lhe será enviado para o endereço de e-mail que você especificou.<br/>Usando o e-mail de confirmação, você será capaz de ativar sua conta. Se você falhar em ativar sua conta dentro de sete dias, ela será apagada.<br/>Você deve especificar um endereço de e-mail válido para poder receber o e-mail de confirmação de conta.';
+$s_signup_title = 'Criar Conta';
+$s_signup_button = 'Criar Conta';
+$s_no_password_request = 'Sua senha é gerenciada por outro sistema. Por favor, contate o administrador de sistemas.';
+
+# site_settings_edit_page.php
+$s_edit_site_settings_title = 'Altera Configurações do Sítio';
+$s_save_settings_button = 'Salvar Configurações';
+
+# site_settings_page.php
+$s_site_settings_title = 'Configurações do Sítio';
+$s_system_info_link = 'Informações do Sistema';
+$s_site_settings_link = 'Configurações do Sítio';
+
+# site_settings_update.php
+$s_site_settings_updated_msg = 'As configurações do site foram atualizadas';
+
+# summary_page.php
+$s_summary_title = 'Relatórios';
+$s_summary_jpgraph_link = 'Relatório avançado';
+$s_by_project = 'Por Projeto';
+$s_by_status = 'Por Status';
+$s_by_date = 'Por Dia';
+$s_by_severity = 'Por Gravidade';
+$s_by_resolution = 'Por Resolução';
+$s_by_category = 'Por Categoria';
+$s_by_priority = 'Por Prioridade';
+$s_by_developer = 'Por Desenvolvedor';
+$s_by_reporter = 'Por Relator';
+$s_reporter_by_resolution = 'Relator por Resolução';
+$s_reporter_effectiveness = 'Eficiência do Relator';
+$s_developer_by_resolution = 'Desenvolvedor por Resolução';
+$s_percentage_fixed = '% Concluídos';
+$s_percentage_errors = '% Falsos';
+$s_errors = 'Falso';
+$s_total = 'Total';
+$s_balance = 'Saldo';
+$s_most_active = 'Mais Ativos';
+$s_score = 'Mudanças';
+$s_days = 'Dias';
+$s_time_stats = 'Estatísticas de Tempo para Demandas Resolvidas (dias)';
+$s_longest_open_bug = 'Demanda aberta há mais tempo';
+$s_longest_open = 'Aberto há quanto tempo';
+$s_average_time = 'Tempo médio';
+$s_total_time = 'Tempo total';
+$s_developer_stats = 'Estatísticas de Desenvolvedores';
+$s_reporter_stats = 'Estatísticas de Relatores';
+$s_orct = '(Aberto/Resolvido/Entregue/Total)';
+
+# view_all_bug_page.php
+$s_any = 'qualquer';
+$s_all = 'todos';
+$s_show = 'Mostrar';
+$s_changed = 'Alterado(hrs)';
+$s_viewing_bugs_title = 'Visualizando Demandas';
+$s_updated = 'Atualizado';
+$s_sticky = 'Mostrar Demandas "Pegajosas"';
+$s_sort = 'Ordenar por';
+$s_issue_id = 'Demanda #';
+$s_recently_visited = 'Recentemente Visitado';
+$s_priority_abbreviation = 'P';
+
+# view_all_inc.php
+$s_none = 'nenhum';
+$s_current = 'atual';
+$s_search = 'Procurar';
+$s_view_prev_link = 'Ver Ant';
+$s_view_next_link = 'Ver Próx';
+$s_prev = 'Anterior';
+$s_next = 'Próximo';
+$s_first = 'Primeiro';
+$s_last = 'Último';
+$s_start_date = 'Data de Início';
+$s_end_date = 'Data de Término';
+$s_use_date_filters = 'Usar Filtros de Data';
+$s_yes = 'Sim';
+$s_no = 'Não';
+$s_open_filters = 'Alterar Filtro';
+$s_or_unassigned = 'ou não atribuída';
+$s_ok = 'OK';
+$s_select_all = 'Selecionar Tudo';
+
+# stored query strings
+$s_use_query = 'Usar Filtro';
+$s_delete_query = 'Apagar Filtro';
+$s_query_deleted = 'Filtro Apagado';
+$s_save_query = 'Salvar Filtro Atual';
+$s_reset_query = 'Redefinir Filtro';
+$s_query_name = 'Nome do Filtro';
+$s_query_exists = 'Esta consulta em particular aparenta já existir.';
+$s_query_dupe_name = 'Outra consulta já tem este nome. Por favor, escolha um nome diferente para esta consulta.';
+$s_query_blank_name = 'Você não pode armazenar um filtro sem um nome. Por favor, dê um nome a este filtro antes de salvar.';
+$s_query_store_error = 'Houve um erro ao salvar esta consulta.';
+$s_open_queries = 'Gerenciar Filtros';
+$s_query_delete_msg = 'Você tem certeza que deseja apagar esta consulta?';
+
+# view_bug_advanced_page.php
+$s_view_simple_link = 'Visualização Simples';
+$s_viewing_bug_advanced_details_title = 'Visualização Avançada da Demanda';
+$s_product_build = 'Build do Produto';
+$s_system_profile = 'Descrição do Sistema';
+$s_update_bug_button = 'Atualizar';
+$s_bug_assign_to_button = 'Atribuir a:';
+$s_bug_status_to_button = 'Alterar Status:';
+$s_reopen_bug_button = 'Reabrir';
+$s_move_bug_button = 'Mover';
+$s_attached_files = 'Arquivos Anexados';
+$s_publish = 'Publicar';
+$s_cached = 'Em cache';
+
+# view_bug_inc.php
+
+# view_bug_page.php
+$s_view_advanced_link = 'Visualização Avançada';
+$s_viewing_bug_simple_details_title = 'Visualização Simples da Demanda';
+
+# bug_monitor_list_view_inc.php
+$s_no_users_monitoring_bug = 'Não há usuários monitorando esta Demanda.';
+$s_users_monitoring_bug = 'Usuários monitorando esta Demanda';
+$s_monitoring_user_list = 'Lista de Usuários';
+
+# bug_sponsorship_list_view_inc.php
+$s_no_users_sponsoring_bug = 'Não há usuários patrocinando esta Demanda.';
+$s_users_sponsoring_bug = 'Usuários patrocinando esta Demanda';
+$s_sponsors_list = 'Lista de Patrocinadores';
+$s_total_sponsorship_amount = 'Patrocínio Total = %s';
+
+# custom field strings
+$s_add_custom_field_button = 'Novo Campo Personalizado';
+$s_delete_custom_field_button = 'Apagar Campo Personalizado';
+$s_delete_custom_field_everywhere = 'Apagar Campo Personalizado Totalmente';
+$s_update_custom_field_button = 'Atualizar Campo Personalizado';
+$s_add_existing_custom_field = 'Adicionar Este Campo Personalizado';
+$s_edit_custom_field_title = 'Alterar campo personalizado';
+$s_custom_field = 'Campo';
+$s_custom_fields_setup = 'Campos Personalizados';
+$s_custom_field_name = 'Nome';
+$s_custom_field_project_count = 'Projetos que Usam';
+$s_custom_field_type = 'Tipo';
+$s_custom_field_possible_values = 'Valores Possíveis';
+$s_custom_field_default_value = 'Valor Padrão';
+$s_custom_field_valid_regexp = 'Expressão Regular';
+$s_custom_field_access_level_r = 'Acesso de Leitura';
+$s_custom_field_access_level_rw = 'Acesso de Escrita';
+$s_custom_field_length_min = 'Comprimento Mínimo';
+$s_custom_field_length_max = 'Comprimento Máximo';
+$s_custom_field_advanced = 'Mostrar somente na página avançada';
+$s_custom_field_display_report = 'Mostrar ao reportar Demandas';
+$s_custom_field_display_update = 'Mostrar ao atualizar Demandas';
+$s_custom_field_display_testes = 'Mostrar ao enviar Demandas para testes';
+$s_custom_field_display_resolved = 'Mostrar ao resolver Demandas';
+$s_custom_field_display_closed = 'Mostrar ao fechar Demandas';
+$s_custom_field_require_report = 'Requerido no relato';
+$s_custom_field_require_update = 'Requerido na atualização';
+$s_custom_field_require_testes = 'Requerido ao enviar para testes';
+$s_custom_field_require_resolved = 'Requerido na resolução';
+$s_custom_field_require_closed = 'Requerido no fechamento';
+$s_link_custom_field_to_project_title = 'Vincular Campo Personalizado ao projeto';
+$s_link_custom_field_to_project_button = 'Vincular Campo Personalizado';
+$s_linked_projects = 'Projetos Vinculados';
+
+$s_custom_field_sequence = 'Seqüência';
+$s_custom_field_type_enum_string = '0:String,1:Numérico,2:Ponto-flutuante,3:Enumeração,4:E-Mail,5:Caixa de Marcação (V/F),6:Lista,7:Lista de seleção múltipla,8:Data';
+
+$s_confirm_used_custom_field_deletion = 'Este campo atualmente está ligado a pelo menos um projeto.  Se você continuar, todos os valores para este campo serão apagados permanentemente.  Esta ação não pode ser desfeita.  Se você não deseja apagar este campo, clique no botão Voltar de seu navegador.  Para continuar, clique no botão abaixo.';
+$s_confirm_custom_field_deletion = 'Você tem certeza que deseja apagar este campo personalizado e todos os seus valores associados?';
+$s_field_delete_button = 'Apagar Campo';
+
+$s_confirm_custom_field_unlinking = 'Você tem certeza que deseja remover (desvincular) este campo personalizado do projeto e apagar todos os valores associados?';
+$s_field_remove_button = 'Remover Campo';
+
+$s_hide_status = 'Ocultar Status';
+$s_filter_closed = "Fechado";
+$s_filter_resolved = "Resolvido";
+$s_filter_testes = "Em testes";
+$s_hide_closed = "Ocultar Fechados";
+$s_hide_resolved = "Ocultar Resolvidos";
+$s_and_above = 'e acima';
+$s_advanced_filters = 'Filtros Avançados';
+$s_simple_filters = 'Filtros Simples';
+$s_monitored_by = 'Monitorado Por';
+
+$s_attachments = "anexo(s)";
+$s_attachment_alt = "A";
+
+# PHPMailer
+$s_phpmailer_language = 'br';
+
+# Sponsorship Strings
+$s_sponsors = '%d patrocinador(es)';
+$s_sponsorship_added = 'Patrocínio Adicionado';
+$s_sponsorship_updated = 'Patrocínio Atualizado';
+$s_sponsorship_deleted = 'Patrocínio Apagado';
+$s_sponsorship_paid = 'Patrocínio Pago';
+$s_sponsorship_more_info = 'Mais informações sobre o patrocínio';
+$s_sponsorship_total = 'Total Patrocinado';
+
+# URL explaining the process of sponsoring an issue.  This is defined here rather than
+# in the config to allow for a URL per language.  This can be set to an empty string if there
+# is not need to provide such process information.
+$s_sponsorship_process_url = '';
+
+# Changelog
+$s_changelog = 'Registro de Mudanças';
+$s_changelog_empty = 'Não há informações disponíveis sobre registros de mudanças';
+
+# Roadmap
+$s_roadmap = 'Planejamento';
+$s_resolved_progress = '%d de %d demanda(s) resolvidas. Progresso (%d%%).';
+
+# Http auth
+$s_http_auth_realm = "Login do aplicativo";
+
+$s_bug = "demanda";
+$s_add_new_relationship = "Nova relação";
+$s_add_new_relationship_button = "Adicionar";
+$s_this_bug = "Esta Demanda";
+$s_relationship_added = "Relação adicionada";
+$s_relationship_deleted = "Relação apagada";
+$s_no_relationship = "sem relações";
+$s_relationship_replaced = "Relação substituída";
+$s_replace_relationship_button = "Substituir";
+$s_replace_relationship_sure_msg = "Já existe uma relação entre os duas Demandas. Você tem certeza que deseja substituir?";
+$s_relationship_with_parent = "Relação com a Demanda pai";
+$s_delete_relationship_button = "Apagar";
+$s_delete_relationship_sure_msg = "Você tem certeza que deseja apagar esta relação?";
+$s_relationship_warning_blocking_bugs_not_resolved = "Nem todas as Demandas filhas foram resolvidas ou entregues.";
+$s_relationship_warning_blocking_bugs_not_resolved_2 = "<b>ATENÇÃO</b>. Nem todas as Demandas filhas já foram resolvidas ou entregues.<br />Antes de <b>resolver/fechar</b> uma Demanda pai, todos oas Demandas relacionados como filhos deste devem ser resolvidos ou fechados.";
+$s_create_child_bug_button = "Criar Clone";
+$s_bug_cloned_to = "Demanda clonada";
+$s_bug_created_from = "Demanda gerada à partir de";
+
+# Relationship Graphs
+$s_viewing_bug_relationship_graph_title = "Gráfico de Relacionamentos";
+$s_viewing_bug_dependency_graph_title = "Gráfico de Dependências";
+$s_relation_graph = "Gráfico de Relações";
+$s_dependency_graph = "Gráfico de Dependências";
+$s_vertical = "Vertical";
+$s_horizontal = "Horizontal";
+$s_view_issue = "Ver Demanda";
+
+# Source Control Integration
+$s_checkin = 'Checkin';
+
+# Pemissions report
+$s_perm_rpt_capability = 'Capacidade';
+$s_view = 'Visualizar';
+$s_issues = 'CASOS';
+$s_report_issue = 'Relatar uma Demanda';
+$s_update_issue = 'Atualizar uma Demanda';
+$s_monitor_issue = 'Monitorar uma Demanda';
+$s_handle_issue = 'Tratar uma Demanda';
+$s_move_issue = 'Mover uma Demanda';
+$s_delete_issue = 'Apagar uma Demanda';
+$s_reopen_issue = 'Reabrir uma Demanda';
+$s_view_private_issues = 'Ver Demandas privados';
+$s_update_readonly_issues = 'Atualizar Demandas somente-leitura';
+$s_update_issue_status = 'Atualizar status da Demanda';
+$s_set_view_status = 'Ajustar visibilidade (público vs privado)';
+$s_update_view_status = 'Atualizar visibilidade (público vs privado)';
+$s_show_list_of_users_monitoring_issue = 'Ver lista de usuários monitorando a Demanda';
+$s_notes = 'ANOTAÇÕES';
+$s_add_notes = 'Adicionar anotações';
+$s_update_notes = 'Atualizar anotações';
+$s_delete_note = 'Apagar anotação';
+$s_view_private_notes = 'Visualizar anotações privadas';
+$s_news = 'NOTÍCIAS';
+$s_view_private_news = 'Visualizar notícias privadas';
+$s_manage_news = 'Gerenciar notícias';
+$s_view_list_of_attachments = 'Ver lista de anexos';
+$s_download_attachments = 'Download de anexos';
+$s_delete_attachments = 'Apagar anexos';
+$s_delete_attachment_button = "Apagar";
+$s_delete_attachment_sure_msg = "Você tem certeza que deseja apagar este anexo?";
+$s_upload_issue_attachments = 'Carregar (upload) anexos aoas Demandas';
+$s_filters = 'filtros';
+$s_save_filters = 'Salvar filtros';
+$s_save_filters_as_shared = 'Salvar filtros como compartilhados';
+$s_use_saved_filters = 'Usar filtros salvos';
+$s_create_project = 'Criar projecto';
+$s_delete_project = 'Apagar projecto';
+$s_manage_project = 'Gerenciar projecto';
+$s_manage_user_access_to_project = 'Gerenciar acessos de usuários ao projeto';
+$s_automatically_included_in_private_projects = 'Incluído automaticamente em projetos privados';
+$s_project_documents = 'DOCUMENTOS DO PROJETO';
+$s_view_project_documents = 'Visualizar documentos do projeto';
+$s_upload_project_documents = 'Atualizar documentos do projeto';
+$s_link_custom_fields_to_projects = 'Ligar campos personalizados aos projetos';
+$s_sponsorships = 'PATROCÍNIOS';
+$s_view_sponsorship_details = 'Visualizar detalhes de patrocínios';
+$s_view_sponsorship_total = 'Visualizar total de patrocínios';
+$s_sponsor_issue = 'Patrocinar Demanda';
+$s_assign_sponsored_issue = 'Atribuir Demanda patrocinado';
+$s_handle_sponsored_issue = 'Tratar Demanda patrocinado';
+$s_others = 'OUTROS';
+$s_see_email_addresses_of_other_users = 'Ver endereços de e-mail de outros usuários';
+$s_send_reminders = 'Enviar lembretes';
+$s_add_profiles = 'Adicionar perfís';
+$s_notify_of_new_user_created = 'Notificar criação de novo usuário';
+$s_email_notification = 'NOTIFICAÇÃO de E-MAIL';
+$s_status_changed_to = 'Mudança de status para';
+$s_email_on_deleted = 'Enviar e-mail para deleção de Demandas';
+$s_email_on_sponsorship_changed = 'Enviar e-mail para mudança de patrocínio';
+$s_email_on_relationship_changed = 'Enviar e-mail para mudança de relações';
+
+# DHTML filters
+$s_loading = 'Carregando...';
+
+# filter_api.php
+$s_between = 'Entre' ;
+$s_on_or_before = 'Em ou Antes' ;
+$s_before = 'Antes' ;
+$s_after = 'Depois' ;
+$s_on_or_after = 'Em ou Depois' ;
+
+# wiki related strings
+$s_wiki = 'Wiki';
+
+# Tagging
+$s_tags = 'Marcadores';
+$s_tag_details = 'Detalhes do marcador: %s';
+$s_tag_id = 'ID do Marcador';
+$s_tag_name = 'Nome';
+$s_tag_creator = 'Criador';
+$s_tag_created = 'Date de Criação';
+$s_tag_updated = 'Última Atualização';
+$s_tag_description = 'Descrição do marcador';
+$s_tag_statistics = 'Estatísticas de Uso';
+$s_tag_update = 'Atualizar Marcador: %s';
+$s_tag_update_return = 'Voltar ao Marcador';
+$s_tag_update_button = 'Atualizar Marcador';
+$s_tag_delete_button = 'Apagar Marcador';
+$s_tag_delete_message = 'Você tem certeza que quer apagar esse marcador?';
+$s_tag_existing = 'Marcadores atuais';
+$s_tag_none_attached = 'Nenhum marcador aplicado.';
+$s_tag_attach = 'Aplicar';
+$s_tag_attach_long = 'Aplicar Marcadores';
+$s_tag_attach_failed = 'Aplicação do Marcador falhou.';
+$s_tag_detach = 'Remover \'%s\'';
+$s_tag_separate_by = "(Separar por '%s')";
+$s_tag_invalid_name = 'Nome de marcador inválido.';
+$s_tag_create_denied = 'Acesso negado para a criação.';
+$s_tag_filter_default = 'Demandas relacionadas (%s)';
+$s_tag_history_attached = 'Marcador Aplicado';
+$s_tag_history_detached = 'Marcador Removido';
+$s_tag_history_renamed = 'Marcador Renomeado';
+$s_tag_related = 'Marcadores Relacionados';
+$s_tag_related_issues = 'Demandas compartilhadas (%s)';
+$s_tag_stats_attached = 'Demandas relacionadas: %s';
+
+# Time Tracking
+$s_time_tracking_billing_link = 'Fatura';
+$s_time_tracking = 'Acompanhamento de tempo';
+$s_time_tracking_get_info_button = 'Obter informações de acompanhamento de tempo';
+$s_time_tracking_cost_per_hour = 'Custo / Hora';
+$s_time_tracking_cost = 'Custo';
+$s_total_time_for_issue = 'Tempo total para a Demanda = %s';
+$s_from_date = 'De';
+$s_to_date = 'Até';
+
+$s_access_denied = $MANTIS_ERROR[ERROR_ACCESS_DENIED];
+
+# Twitter Integration
+$s_twitter_resolved = "%d: [%s] %s (resolvida por %s em %s)";
+$s_twitter_resolved_no_version = "%d: [%s] %s (resolvida por %s)";
+
+# Project Page
+$s_development_team = 'Equipe de desenvolvimento';
+
+# bug_graph pages
+$s_all_dates = 'Todas as Datas';
+$s_period_none = 'Nenhum';
+$s_period_this_week = 'Esta Semana';
+$s_period_last_week = 'Semana Passada';
+$s_period_two_weeks = 'Últimas Duas Semanas';
+$s_period_this_month = 'Este Mês';
+$s_period_last_month = 'Mês Passado';
+$s_period_this_quarter = 'Esta Quinzena';
+$s_period_last_quarter = 'Última Quinzena';
+$s_period_year_to_date = 'Este ano';
+$s_period_select = "Especificar período";
+$s_period_last_year = 'Ano Passado';
+$s_select = 'Por favor Selecione';
+$s_select_bystatus = 'por Status';
+$s_select_summbystatus = 'Resumo por Status';
+$s_select_bycat = "Resumo por Categoria";
+$s_select_both = "Resumo por Status e Categoria";
+$s_show_as_graph = 'Mostrar como Gráfico';
+$s_show_as_table = 'Mostrar como Tabela';
+$s_show_graph = 'Mostrar Gráfico';
+$s_graph_page = 'Gráfico do histórico da Demanda';
+$s_graph_bug_page_link = 'Gráfico';
+?>

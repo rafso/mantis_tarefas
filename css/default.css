@@ -1,0 +1,835 @@
+body		{
+background:transparent url(../images/body.jpg) right 0 no-repeat;
+color: #000;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10pt;
+margin-left: 4px;
+margin-right: 4px;
+margin-top: 6px;
+margin-bottom: 6px;
+}
+
+.select_bugs 
+{
+	width: 650px;
+}
+
+#filter_open{
+border:solid 1px #ccc;
+}
+#filter_open .row-1{
+background:#dfdfdf;
+}
+
+p 					{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*css criado*/
+.td_login{
+width:450px;
+padding:10px 0 50px 0;
+height:100px;
+border:solid 1px #dfdfdf;
+color:#666666;
+
+
+}
+
+.category_login_title{
+font-size:16px;
+font-weight:bold;
+text-align:center;
+}
+.category_login{
+font-size:12px;
+font-weight:bold;
+}
+
+
+.login_1, .login_2{
+font-size:24px;
+width:200px;
+height:28px;
+border:solid 1px #ccc;
+padding:0 0 0 25px;
+
+}
+
+.login_1{
+background:#FFF url(../images/login1.jpg) 0 0 no-repeat;
+}
+.login_2{
+background:#FFF url(../images/login2.jpg) 0 0 no-repeat;
+}
+
+.button_login{
+background:#FFF url(../images/button_login.jpg) 0 1px no-repeat;
+width:80px;
+height:27px;
+border:0;
+padding:0 15px 0 0;
+cursor:pointer;
+}
+
+
+
+input[type="checkbox"] {
+background:none;
+border: none;
+padding:0;
+}
+
+input[type="radio"] {
+background:none;
+border: none;
+padding:0;
+}
+
+.titulo_telageral{
+font-size:24px;
+float:right;
+font-weight:bold;
+letter-spacing:2px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+padding:22px 388px 0 0;
+text-shadow: 3px 3px 6px #666;
+}
+
+.numero_demanda{
+color:#000;
+font-weight:bold;
+font-size:20px;
+text-align:center;
+line-height:30px;
+letter-spacing:5px;
+}
+
+/*css criado*/
+
+
+
+
+address 			{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 8pt }
+
+a					{
+color:#000;
+text-decoration:underline;
+}
+a:hover{
+color:#666;
+text-decoration:underline;
+}
+a:active 			{
+
+}
+a:link    			{
+
+}
+a:visited 			{
+
+}
+a.subtle			{
+color:#666;
+text-decoration: underline;
+font-size:12px;
+}
+a.subtle:hover			{
+color:#000;
+text-decoration:underline;
+font-size:12px;
+}
+
+form				{
+display: inline;
+}
+
+input				{
+border:solid 1px #9f9f9f;
+background:#fff url(../images/input.jpg) 0 0 repeat-x;
+}
+
+input[type="checkbox"] {
+border: none;
+}
+
+input.button		{
+background:transparent url(../images/input_botao.jpg) 0 -4px repeat-x;
+border:solid 1px #000;
+cursor:pointer;
+color:#fff;
+font-size:11px;
+font-weight:bold;
+-moz-border-radius:3px;
+padding:2px;
+
+}
+
+.file, .fileAvatar		{
+background:transparent url(../images/input_botao.jpg) 0 -4px repeat-x;
+border:solid 1px #000;
+color:#fff;
+font-size:11px;
+font-weight:bold;
+-moz-border-radius:3px;
+padding:2px;
+
+}
+
+input.button-small	{
+font-size: 11px;
+background:transparent url(../images/input_botao.jpg) 0 -7px repeat-x;
+border:solid 1px #000;
+cursor:pointer;
+color:#fff;
+font-weight:bold;
+-moz-border-radius:2px;
+padding:1px;
+}
+
+textarea			{
+border:solid 1px #ccc;
+background:#fff url(../images/input.jpg) 0 0 repeat-x;
+}
+select				{
+border:solid 1px #ccc;
+background:#fff url(../images/input.jpg) 0 0 repeat-x;
+}
+
+span				{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10pt;
+}
+span.print			{
+font-size: 8pt;
+}
+span.required 		{
+font-size: 8pt;
+color: #bb0000;
+}
+span.small 			{
+font-size: 8pt;
+font-weight: normal;
+}
+span.pagetitle		{
+font-size: 12pt;
+font-weight: bold;
+text-align: center }
+
+table				{
+}
+table.hide			{
+width: 100%;
+border-top: solid 1px #efefef;
+background:#f9f9f9;
+}
+table.width100		{
+width: 100%;
+border:0px solid #9f9f9f;
+background:#efefef;
+}
+table.width75		{
+width: 75%;
+border: solid 1px #dfdfdf;
+border-bottom:solid 2px #ccc;
+border-right:solid 1px #ccc;
+}
+table.width60		{
+width: 60%;
+border: solid 1px #dfdfdf;
+border-bottom:solid 2px #ccc;
+border-right:solid 1px #ccc;
+}
+table.width50		{
+width: 50%;
+border: solid 1px #dfdfdf;
+border-bottom:solid 2px #ccc;
+border-right:solid 1px #ccc;
+}
+
+/* Cabecalho Principal - linha onde a cor era ROXO no Mantis Original */
+td 					{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10pt;
+padding: 4px;
+text-align: left;
+}
+td.center			{
+text-align: center;
+}
+
+td.centerBugs			{
+text-align: center;
+width: 1%;
+}
+
+td.left				{
+text-align: left;
+}
+
+td.right			{
+background-color:#FFFFFF;
+text-align: right;
+}
+
+td.right1		{
+text-align: right;
+width: 100px;
+}
+
+td.rightPaginacao		{
+text-align: right;
+}
+
+
+/* altera a cor da caixa de JUMP - Criado por Bruno - Braxis em 06/02/07 - Alterado no arquivo html_api.php */
+td.right_prosegur	{
+background-color: #FFCC00;
+text-align: right;
+}
+
+td.category			{
+background:#dfdfdf;
+color: #000000;
+font-weight: bold;
+vertical-align : top;
+}
+
+td.col-1			{
+background-color:#d8d8d8;
+color: #000000;
+}
+td.col-2			{
+background-color:#e8e8e8;
+color: #000000;
+}
+td.form-title, .form-title1, .form-title-date, .form-title-date1, .form-button-clear, .form-date-report		{
+background-color:#ffffff;
+color: #000000;
+font-weight: bold;
+text-align: left;
+border:solid 1px #ccc;
+border-right: 0px;
+font-size:12px;
+}
+td.form-title1		{
+text-align: right;
+border-left: 0;
+border-right:solid 1px #ccc;
+}
+td.form-title-date 
+{
+	vertical-align: top;
+	text-align: center;
+}
+.form-title-date1 
+{
+	width: 30%;
+	text-align: center;
+}
+.form-date-report
+{
+	width: 15%;
+	text-align: right;
+	border-right: 0px;
+}
+.form-button-clear 
+{
+	width: 15%;
+	border-left: 0px;
+}
+td.nopad			{
+padding: 0px;
+}
+td.spacer			{
+background-color: #ffffff;
+color: #000000;
+font-size: 1pt;
+line-height: 0.1;
+}
+td.small-caption	{
+font-size: 8pt;
+}
+td.print			{
+font-size: 8pt;
+text-align: left;
+padding: 2px;
+}
+td.print-category	{
+font-size: 8pt;
+color: #000000;
+font-weight: bold;
+text-align: right;
+padding: 2px;
+}
+td.print-bottom		{
+border-bottom: 1px solid #000000;
+}
+td.print-spacer		{
+background-color: #ffffff;
+color: #000000;
+font-size: 1pt;
+line-height: 0.1;
+padding: 0px;
+}
+
+/*Define as Cores das tabelas de filtros*/
+tr					{
+}
+tr.row-1			{
+background-color: #f1f1f1;
+color: #000000;
+}
+tr.row-2			{
+background-color: #dfdfdf;
+color: #000000;
+}
+
+td.row-1			{
+background-color: #f9f9f9!important;
+color: #000000;
+border-bottom:solid 1px #dfdfdf;
+}
+td.row-1_tittle			{
+background-color: #bfbfbf!important;
+color: #000000;
+border-bottom:solid 1px #dfdfdf;
+font-size:14px;
+font-weight:bold;
+text-align:center;
+}
+
+/* Altera a Cor do MENU */
+tr.row-category		{
+background:#ffcc00 url(../images/td_titulo.jpg) 0 0 repeat-x;
+color: #000;
+font-weight: bold;
+font-size:18px;
+}
+
+tr.row-category td  {
+text-align:center;
+}
+tr.row-category2	{
+background-color: #f2f2f2;
+color: #000000;
+}
+tr.row-category-history {
+background:#ffcc00 url(../images/td_titulo.jpg) 0 0 repeat-x;
+color: #000000;
+font-weight: bold;
+}
+tr.row-category-history td {
+text-align: left;
+}
+tr.vcenter			{
+vertical-align: middle;
+}
+tr.print			{
+vertical-align: top;
+}
+tr.print-category	{
+color: #000000;
+font-weight: bold;
+}
+
+#buglist tr			{
+text-align: center;
+}
+
+/* Cores referente ao BugNotes - Quando inseridos no Mantis ja Cadastrado */
+tr.bugnote				{
+vertical-align: top;
+}
+td.bugnote-public		{
+background-color: #dfdfdf;
+color: #000000;
+font-weight: bold;
+width: 25%;
+line-height: 1.4;
+}
+td.bugnote-note-public	{
+background-color: #cfcfcf;
+color: #000000;
+width: 75%;
+}
+
+td.bugnote-private		{
+background:#fff url(../images/category.jpg) 0 0 repeat-x;
+color: #000000;
+font-weight: bold;
+width: 25%;
+line-height: 1.4;
+border:solid 1px #666;
+}				
+td.bugnote-note-private	{
+background:#fff url(../images/category.jpg) 0 0 repeat-x;
+color: #000000;
+width: 75%;
+border:solid 1px #666;
+}
+
+td.login-info-left		{
+width: 60%;
+padding: 0px;
+text-align: left;
+}
+td.login-info-middle	{
+width: 25%;
+padding: 0px;
+text-align: center;
+}
+td.login-info-right		{
+width: 10%;
+padding: 0px;
+text-align: right;
+white-space: nowrap;
+font-size:14px;
+
+}
+td.login-info-right	input	{
+color:#fff;
+font-weight:bold;
+background:#989898 url(../images/input_botao.jpg) 0 -5px repeat-x;
+border:solid 1px #000;
+
+}
+
+/*Define as Cores do Menu Principal*/
+
+td.menu					{
+background:transparent url(../images/menu.jpg) 0 -2px repeat-x;
+height:28px;
+color: #000000;
+text-align: center;
+width: 85%;
+padding: 2px;
+border:solid 1px #dfdfdf!important;
+font-size:10px;
+}
+
+.menu a					{
+color: #fff;
+text-decoration:none;
+font-weight:bold;
+}
+.menu a:hover				{
+color: #ffcc00;
+
+}
+
+
+.bracket-link a:link {
+color:#666;
+text-decoration:none;
+
+}
+
+.bracket-link a:hover{
+color:#000;
+text-decoration:underline;
+
+}
+
+
+
+.nowrap{
+}
+
+
+/* Cores referente ao Post de Mensagens - BugNotes - Aparecerao na Tela inicial */
+td.news-heading-public	{
+background-color: #FFE67D;
+color: #000000;
+text-align: left;
+border-bottom: 1px solid #000000;
+}
+td.news-heading-private	{
+background-color: #FFF2C1;
+color: #000000;
+text-align: left;
+border-bottom: 1px solid #000000;
+}
+td.news-body			{
+background-color: #ffffff;
+color: #000000;
+padding: 16px;
+}
+
+img						{
+}
+img.icon				{
+width: 11px;
+height: 11px;
+}
+
+div						{
+padding: 3px;
+}
+div.menu				{
+background-color: #e8e8e8;
+color: #000000;
+text-align: center;
+width: 100%;
+padding: 1px;
+}
+
+div.border-center		{
+background-color: #ffffff;
+border: solid 1px #000000;
+text-align: center;
+width: 50%;
+position: relative;
+margin-right: auto;
+margin-left: auto;
+}
+
+div.quick-summary-left	{
+width: 49%;
+padding:2px 10px 0 10px;
+text-align: left;
+float: left;
+font-size:16px;
+color:#000;
+}
+div.quick-summary-right	{
+width: 49%;
+padding: 2px;
+text-align: right;
+float: right;
+}
+
+.center					{
+text-align: center;
+}
+.left					{
+text-align: left;
+}
+.right					{
+text-align: right;
+}
+.small					{
+font-size: 8pt;
+}
+.small-normal 			{
+font-size: 8pt;
+font-weight: normal;
+}
+.bold					{
+font-weight: bold;
+}
+.bold-small				{
+font-weight: bold;
+font-size: 8pt;
+}
+.italic					{
+font-style: italic;
+}
+.italic-small			{
+font-style: italic;
+font-size: 8pt;
+}
+.underline				{
+text-decoration: underline;
+}
+.underline-small		{
+text-decoration: underline;
+font-size: 8pt;
+}
+.strike					{
+text-decoration: line-through;
+}
+.text					{
+text-decoration: none
+}
+.strike-small			{
+text-decoration: line-through;
+font-size: 8pt; }
+
+#carregandoIE 			{
+border: 0;
+filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='images/box.png');
+font-size: 10px;
+font-family: verdana;
+position: fixed;
+padding:72px 0 0 0;
+text-align: center;
+width:167px;
+height: 141px;
+top: 50%;
+left: 45%;
+}
+#carregandoFX 			{
+border:0;
+background: transparent url(../images/box.png) 0 0 no-repeat;
+font-size: 10px;
+font-family: verdana;
+position: fixed;
+padding:72px 0 0 0;
+text-align: center;
+width:167px;
+height: 141px;
+top: 50%;
+left: 45%;
+}
+
+.tooltip img {
+border: 0;
+}
+
+a.tooltip {
+position:relative;
+text-decoration: none;
+cursor: help;
+}
+
+a.tooltip:hover {
+z-index: 25;             
+}
+
+a.tooltip span {
+display: none;
+margin:0 0 0 -130px;
+}
+
+a.tooltip:hover span {
+display:block;
+position:absolute;
+text-align:left;
+left:0;
+color:#000;
+background:#f7f7f7;
+}
+
+.txt_tooltip{
+width:120px;
+height:auto;
+padding:4px;
+border:solid #ccc 1px;
+margin:4px;
+}
+
+.divFiltro {
+position: absolute;
+left: auto;
+right: 7%;
+top: auto;
+text-align: center;
+width: 85%;
+height: auto!Important;
+z-index: 2500;
+display: none;
+background-color: white;
+}
+
+.divFiltro img{
+position: absolute;
+right: 2px;
+z-index: 2501;
+cursor: pointer;
+}
+
+.linkImg 
+{
+	border: 0;
+	cursor: pointer;
+}
+
+.divChangCoverage, .divChangCoverageViewPage, .divChangNote, .divAddReserv{
+position: absolute;
+left: auto;
+right: auto;
+top: auto;
+text-align: left;
+width: auto;
+*width: 120px!Important;
+height: auto!Important;
+z-index: 2510;
+display: none;
+background-color: white;
+border: 1px solid #666;
+padding: 3px 10px 10px 10px;
+}
+
+.divAddReserv 
+{
+	right: 7%;
+	width: auto;
+	*width: 400px!Important;
+	height: auto!Important;
+	z-index: 1;
+}
+
+.imgDivChange{
+position: absolute;
+right: 2px;
+z-index: 2501;
+cursor: pointer;
+margin: -7px -7px 0 0;
+}
+
+.divChangCoverageViewPage {
+right: 7%;
+}
+
+.divChangNote
+{
+right: 5%;
+}
+
+.loading {
+border:0;
+background: transparent url(../images/box.png) 0 0 no-repeat;
+font-size: 10px;
+font-family: verdana;
+position: fixed;
+padding: 72px 0 0 0;
+text-align: center;
+width: 167px;
+height: 141px;
+top: 40%;
+left: 45%;
+display: none;
+}
+
+.loading img{
+display: none;
+}
+
+.loading label{
+display: none;
+}
+
+.avatar
+{
+    border: 1px solid #CCCCCC;
+    height: 80px;
+    width: 80px;
+}
+
+.IfrAvatar 
+{
+	text-align: left;
+    border-style: none; 
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.bodyAvatar
+{
+	background-image: none;
+	background: #f1f1f1;
+}
+
+.fileAvatar 
+{
+	margin-bottom: 4px;
+}
+.selType 
+{
+	width: 150px;
+	height: 115px;
+}
